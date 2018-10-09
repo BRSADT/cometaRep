@@ -1,0 +1,82 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  background: #0e1a25;
+  font-size: 0.625em;
+}
+
+.soc {
+  display: inline;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: :10%
+}
+.soc li {
+  display: inline-block;
+  margin: 12px;
+  margin: 1.2rem;
+}
+.soc a, .soc svg {
+  display: block;
+}
+.soc a {
+  position: relative;
+  height: 50px;
+  width: 50px;
+margin-left: 5px;
+
+}
+.soc svg {
+  height: 50px;
+  width: 50px;
+}
+
+.icon-1:hover, .icon-2:hover, .icon-3:hover, .icon-4:hover, .icon-5:hover, .icon-6:hover, .icon-7:hover, .icon-8:hover, .icon-9:hover, .icon-10:hover, .icon-11:hover, .icon-12:hover, .icon-13:hover, .icon-14:hover, .icon-15:hover, .icon-16:hover, .icon-17:hover, .icon-18:hover, .icon-19:hover, .icon-20:hover, .icon-21:hover, .icon-22:hover, .icon-23:hover, .icon-24:hover, .icon-25:hover, .icon-26:hover, .icon-27:hover, .icon-28:hover, .icon-29:hover, .icon-30:hover, .icon-31:hover {
+  border-radius: 100%;
+  color: #0e1a25;
+  fill: #0e1a25;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+
+
+.icon-8 {
+  color: #6ed926;
+  fill:#cc8c22;
+}
+.icon-8:hover {
+  background: #dea51f;
+}
+
+
+
+.icon-26 {
+  color: #d926b5;
+  fill: #cc8c22;
+}
+.icon-26:hover {
+  background: #dea51f;
+}
+
+
+.icon-28 {
+  color: #dea51f;
+  fill: #cc8c22;
+}
+.icon-28:hover {
+  background: #dea51f;
+}

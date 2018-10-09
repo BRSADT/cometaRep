@@ -41,10 +41,7 @@
 <article class="principal">
 <div class="circulo">
 </div>
-
 <img id="logo-imagenes" onmouseover="SobreImagen()" onmouseout="AfueraImagen()" src="../Imagenes/astronauta.png" style="z-index: 5;">
-
-
 
 
 </article>

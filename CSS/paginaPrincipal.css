@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+  height: 100%;
+}
+aside.normal,nav.normal{
+  height: 15%;
+}
+article{
+margin-top: 27%;
+}
+@media screen and (min-width: 576px) {
+  aside.normal,nav.normal{
+    height: 100%;
+  }
+article{
+margin-top:0%;
+
+
+}
+
+}

@@ -5,20 +5,201 @@
 html, body {
   height: 100%;
 }
-aside.normal,nav.normal{
-  height: 15%;
+aside.responsive,nav.responsive{
+  height: 100%;
+  background: linear-gradient(90deg,
+ rgba(191, 160, 98, .1) 0%,
+ rgba(191, 160, 98, 0.1) 25%,
+ rgba(191, 160, 98, 0.1) 75%,
+ rgba(191, 160, 98, 0) 100%);
+
+
+inset 0 0 1 ;
+rgba(255, 255, 255, 0.6);
+
 }
+
+ul.MenuOpciones{
+  position: relative;
+  z-index: 4;
+  color: #FFF;
+  text-align: center;
+  font-family: 'lato',sans-serif;
+    text-shadow:
+      0 0 5px rgb(170, 175, 171),
+      0 0 10px rgb(157, 162, 165),
+      0 0 20px rgb(0, 0, 0),
+      0 0 40px rgb(0, 0, 0),
+      0 0 80px rgb(0, 0, 0),
+      0 0 90px rgb(0, 0, 0),
+      0 0 100px rgba(38,104,127,1),
+      0 0 140px rgba(38,104,127,1),
+      0 0 180px rgba(38,104,127,1);
+      margin-right:20%;
+        margin-top: 50%;
+        font-weight: 200;
+        font-size: 26px;
+margin-left: 5%;
+}
+
+ul.MenuOpciones li{
+display:block;
+margin-top:5%;
+margin-left: 2%;
+    z-index:3;
+    background: -webkit-linear-gradient(white, #38495a);
+
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+    color: #FFF;
+    text-align: center;
+    font-family: 'lato',sans-serif;
+
+    letter-spacing: 2px;
+    font-weight: 150;
+    font-size: 100%;
+
+      z-index:3;
+
+      text-shadow:
+      	0 0 5px rgb(170, 175, 171),
+        0 0 10px rgb(157, 162, 165),
+        0 0 20px rgb(0, 0, 0),
+        0 0 40px rgb(0, 0, 0),
+        0 0 80px rgb(0, 0, 0),
+        0 0 90px rgb(0, 0, 0),
+    		0 0 100px rgba(38,104,127,1),
+    		0 0 140px rgba(38,104,127,1),
+    		0 0 180px rgba(38,104,127,1);
+
+}
+
+div.contenido{
+position: absolute;
+height: 100%;
+margin-top: 20%;
+margin-left: 20%;
+}
+
+
+
+
+
+
 article{
-margin-top: 27%;
+  position: absolute;
+margin-top: 0%;
 }
-@media screen and (min-width: 576px) {
-  aside.normal,nav.normal{
-    height: 100%;
+
+
+
+@media screen and (max-width: 575px) {
+  article{
+
+
+  margin-top: 20%;
   }
-article{
-margin-top:0%;
+  div.contenido{
+margin-top: 0%;
 
+  }
+  aside.responsive,nav.responsive{
+    height: 15%;
+  }
+
+ul.MenuOpciones li{
+display:inline;
 
 }
+ul.MenuOpciones{
+
+      margin-top: 2%;
+      margin-right: 5%;
+    font-size: 20px;
+}
+
+}
+@media screen and (max-width: 263px) {
+  ul.MenuOpciones{
+  font-size: 15px;
+  }
+
+}
+
+
+
+
+/*Efecto estrellas*/
+
+@keyframes mov-parpadeo {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes mov-parpadeo {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes mov-parpadeo {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes mov-parpadeo {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+
+
+@keyframes moverEstrellas {
+    from {background-position:0 ;}
+    to {background-position:-5000px ;}
+}
+@-webkit-keyframes moverEstrellas {
+    from {background-position:0 ;}
+    to {background-position:-5000px;}
+}
+@-moz-keyframes moverEstrellas {
+    from {background-position:0 ;}
+    to {background-position:-5000px ;}
+}
+@-ms-keyframes moverEstrellas {
+    from {background-position:0;}
+    to {background-position:-5000px ;}
+}
+
+
+.estrellas, .Parpadeo{
+  height: 100%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  display:block;
+}
+
+.estrellas {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:0;
+-moz-animation:moverEstrellas 200s linear infinite;
+  -ms-animation:moverEstrellas 200s linear infinite;
+  -o-animation:moverEstrellas 200s linear infinite;
+  -webkit-animation:moverEstrellas 200s linear infinite;
+  animation:moverEstrellas 200s linear infinite;
+
+}
+
+.Parpadeo{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:1;
+
+  -moz-animation:mov-parpadeo 200s linear infinite;
+  -ms-animation:mov-parpadeo 200s linear infinite;
+  -o-animation:mov-parpadeo 200s linear infinite;
+  -webkit-animation:mov-parpadeo 200s linear infinite;
+  animation:mov-parpadeo 200s linear infinite;
 
 }

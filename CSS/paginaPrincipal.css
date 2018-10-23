@@ -41,10 +41,16 @@ ul.MenuOpciones{
         font-size: 26px;
 margin-left: 5%;
 }
+ul.MenuOpciones li:hover {
+  transform: rotateX( 0deg ) rotateY( 0deg ) rotateZ( 370deg );
+   cursor: pointer;
+}
+
 
 ul.MenuOpciones li{
+    transition: 0.8s;
 display:block;
-margin-top:5%;
+margin-top:15%;
 margin-left: 2%;
     z-index:3;
     background: -webkit-linear-gradient(white, #38495a);
@@ -84,11 +90,8 @@ margin-left: 20%;
 
 
 
-
-
-
 article{
-  position: absolute;
+  position: static;
 margin-top: 0%;
 }
 
@@ -106,26 +109,164 @@ margin-top: 0%;
   }
   aside.responsive,nav.responsive{
     height: 15%;
+
   }
 
-ul.MenuOpciones li{
-display:inline;
 
-}
 ul.MenuOpciones{
 
       margin-top: 2%;
       margin-right: 5%;
     font-size: 20px;
 }
+ul.MenuOpciones li{
+display: inline;
 
 }
+
+.login {
+  position: relative;
+  z-index: 5;
+  margin:0 auto;
+    margin-left: 30%;
+  max-width:500px;
+}
+
+}
+
+
+
 @media screen and (max-width: 263px) {
   ul.MenuOpciones{
   font-size: 15px;
   }
 
 }
+
+
+
+.main{
+visibility: hidden;
+
+position: absolute;
+}
+
+.aboutus{
+  visibility: hidden;
+    text-align: center;
+color: blue;
+}
+.aboutus p{
+font-size: xx-large;
+}
+
+/*LOGIN*/
+
+
+.login {
+  visibility: hidden;
+  display: none;
+  position: relative;
+  z-index: 5;
+  margin:0 auto;
+  margin-top: 8%;
+
+  max-width:500px;
+}
+.login-header {
+    z-index: 5;
+  color:#fff;
+  text-align:center;
+  font-size:300%;
+}
+/* .login-header h1 {
+   text-shadow: 0px 5px 15px #000; */
+}
+.login-form {
+    z-index: 5;
+  border:.5px solid #fff;
+  background:#4facff;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+}
+.login-form h3 {
+    z-index: 5;
+  text-align:left;
+  margin-left:40px;
+  color:#fff;
+}
+.login-form {
+
+    z-index: 5;
+  box-sizing:border-box;
+  padding-top:15px;
+	padding-bottom:10%;
+  margin:5% auto;
+  text-align:center;
+}
+.login input[type="text"],
+.login input[type="password"] {
+  max-width:400px;
+	width: 80%;
+  line-height:3em;
+  font-family: 'Ubuntu', sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+}
+.login-form input[type="button"] {
+  height:30px;
+  width:100px;
+  background:#fff;
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: slategrey;
+  text-transform:uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  cursor:pointer;
+}
+.sign-up{
+  color:#f2f2f2;
+  margin-left:-70%;
+  cursor:pointer;
+  text-decoration:underline;
+}
+.no-access {
+  color:#E86850;
+  margin:20px 0px 20px -57%;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.try-again {
+  color:#f2f2f2;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+/*Media Querie*/
+@media only screen and (min-width : 150px) and (max-width : 530px){
+  .login-form h3 {
+    text-align:center;
+    margin:0;
+  }
+  .sign-up, .no-access {
+    margin:10px 0;
+  }
+  .login-button {
+    margin-bottom:10px;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@
 
 
     <title>Dashboard Template for Bootstrap</title>
-
+         <script src="../JavaScript/cambioDeInfoIndex.js"></script>
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/paginaPrincipal.css">
 <link rel="stylesheet" href="../CSS/Botones.css">
@@ -29,8 +29,8 @@
                     <!--    <div class="collapse navbar-collapse align-items-start">  -->
                 <div class="contenido">
                   <ul class="MenuOpciones">
-                    <li><a> Log In</a></li>
-                    <li><a>About Us</a></li>
+                    <li onclick="LogIn()"> Log In</li>
+                    <li onclick="About()">About Us</li>
                     <li><a>Mission</a></li>
                     <li>Vision</li>
                     <li>Contact</li>
@@ -50,15 +50,42 @@
 
 
 
-<article>
-        <main class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4  color:white z-index:5 ">
-          <h2>Main</h2>
-          <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-              raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation.
-              Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
+
+        <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+                <main class="main">
+                  <h2>Main</h2>
+                  <p></p>
 
 
-        </main>
+                </main>
+                <main class="aboutus">
+                  <h2>Sobre Nosotros</h2>
+                  <p>
+                  Cometa es una organizacion que...
+                  </p>
+
+
+                </main>
+
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+        <div class="login">
+          <div class="login-header">
+            <h1>Login</h1>
+          </div>
+          <div class="login-form">
+            <h3>Username:</h3>
+            <input type="text" placeholder="Username"/><br>
+            <h3>Password:</h3>
+            <input type="password" placeholder="Password"/>
+            <br>
+            <input type="button" value="Login" class="login-button"/>
+            <br>
+            <a class="sign-up">Sign Up!</a>
+            <br>
+            <h6 class="no-access">Can't access your account?</h6>
+          </div>
+        </div>
 
 
 </article>

@@ -93,6 +93,8 @@ margin-left: 20%;
 article{
   position: static;
 margin-top: 0%;
+height: 100%;
+overflow: hidden;
 }
 
 
@@ -152,9 +154,15 @@ position: absolute;
 }
 
 .aboutus{
+  position: absolute;
+
+    transform:translate(0%, 100%);
+
   visibility: hidden;
-    text-align: center;
-color: blue;
+    text-align: justify;
+  color: #cc8c22;
+    /*  color: #cc8c22;*/
+  z-index: 5;
 }
 .aboutus p{
 font-size: xx-large;

@@ -64,8 +64,12 @@ visibility: hidden;
 
 
 .icon-8 {
-  color: #6ed926;
-  fill:#cc8c22;
+  /*color: #FFFF82;
+
+  fill:#FFFF82;
+*/
+    color: #6ed926;
+    fill:#cc8c22;
 }
 .icon-8:hover {
   background: #dea51f;

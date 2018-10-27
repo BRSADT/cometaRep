@@ -73,20 +73,24 @@
           <div class="login-header">
             <h1>Login</h1>
           </div>
+
+          <form method="post" action="../PHP/LogIn.php">
           <div class="login-form">
-            <h3>Username:</h3>
-            <input type="text" placeholder="Username"/><br>
-            <h3>Password:</h3>
-            <input type="password" placeholder="Password"/>
+
+            <input type="text" name="usuario" required>
             <br>
-            <input type="button" value="Login" class="login-button"/>
+
+            <input type="password" name="contra" required >
+            <br>
+
+            <input type="submit" value="Submit" class="login-button"/>
             <br>
             <a class="sign-up">Sign Up!</a>
             <br>
             <h6 class="no-access">Can't access your account?</h6>
           </div>
         </div>
-
+</form>
 
 </article>
   </body>

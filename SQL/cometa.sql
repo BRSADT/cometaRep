@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2018 a las 04:48:35
+-- Tiempo de generación: 27-10-2018 a las 21:36:40
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -64,6 +64,26 @@ CREATE TABLE `nave` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `nombrespuestos`
+--
+
+CREATE TABLE `nombrespuestos` (
+  `Puestos_codigoPuesto` int(11) NOT NULL,
+  `nombrePuestos` varchar(30) NOT NULL,
+  `link` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `nombrespuestos`
+--
+
+INSERT INTO `nombrespuestos` (`Puestos_codigoPuesto`, `nombrePuestos`, `link`) VALUES
+(1, 'Capitan', 'Capitan.php'),
+(2, 'Ingenieria', 'Ingenieria.php');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `puesto`
 --
 
@@ -71,6 +91,14 @@ CREATE TABLE `puesto` (
   `codigoPuesto` int(11) NOT NULL,
   `codigoNombre` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `puesto`
+--
+
+INSERT INTO `puesto` (`codigoPuesto`, `codigoNombre`) VALUES
+(1, '1'),
+(2, '2');
 
 -- --------------------------------------------------------
 
@@ -107,15 +135,24 @@ CREATE TABLE `revision` (
 
 CREATE TABLE `usuario` (
   `usuarioCodigo` int(11) NOT NULL,
-  `usuarioContraseña` varchar(30) NOT NULL,
+  `usuarioContrasena` varchar(30) NOT NULL,
   `usuarioNombre` varchar(30) NOT NULL,
   `usuarioApellido` varchar(30) NOT NULL,
   `usuarioHabilitado` int(11) NOT NULL,
   `usuario_NaveCodigo` int(11) NOT NULL,
   `capitan_UsuarioCodigo` int(11) NOT NULL,
   `capitan_UsuarioInvitacion` int(11) NOT NULL,
-  `usuarioLogIn` varchar(30) NOT NULL
+  `usuarioLogIn` varchar(30) NOT NULL,
+  `usuarioEdad` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`usuarioCodigo`, `usuarioContrasena`, `usuarioNombre`, `usuarioApellido`, `usuarioHabilitado`, `usuario_NaveCodigo`, `capitan_UsuarioCodigo`, `capitan_UsuarioInvitacion`, `usuarioLogIn`, `usuarioEdad`) VALUES
+(1, '5656', 'Brenda', 'Avila', 1, 1, 2, 1, 'BrendaSamant', 20),
+(2, 'carlos', 'Carlos Alejandro', 'Rosales Celis', 1, 1, 1, 1, 'carlos', 20);
 
 --
 -- Índices para tablas volcadas

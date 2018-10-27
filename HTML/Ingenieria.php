@@ -28,8 +28,11 @@
 <div id="info">
 <p>
 
-  Nombre: Brenda Samantha Avila De la torre
-  Edad:20 añoss
+<?php  session_start();
+echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
+
+ ?>
+
 </p>
 </div>
             <nav class="normal navbarflex-md-column flex-row align-items-start py-2">

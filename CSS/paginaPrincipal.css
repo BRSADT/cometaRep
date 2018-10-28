@@ -94,9 +94,90 @@ article{
   position: static;
 margin-top: 0%;
 height: 100%;
-overflow: hidden;
+overflow: hidden; /*Cambiar esto*/
 }
 
+
+.main{
+visibility: hidden;
+
+position: absolute;
+}
+
+.aboutus{
+  display: none;
+    visibility: hidden;
+    text-align: justify;
+    color: #cc8c22;
+      /*  color: #cc8c22;*/
+  z-index: 5;
+}
+.aboutus p{
+font-size: xx-large;
+}
+
+.Mision{
+  display: none;
+    visibility: hidden;
+    text-align: justify;
+    color: #cc8c22;
+      /*  color: #cc8c22;*/
+  z-index: 5;
+}
+.Mision p{
+font-size: xx-large;
+}
+
+
+.Vision{
+  display: none;
+    visibility: hidden;
+    text-align: justify;
+    color: #cc8c22;
+      /*  color: #cc8c22;*/
+  z-index: 5;
+}
+.Vision p{
+font-size: xx-large;
+}
+
+
+
+.Contact{
+display: none;
+  visibility: hidden;
+  text-align: justify;
+  color: #cc8c22;
+    /*  color: #cc8c22;*/
+z-index: 5;
+}
+.Contact p{
+font-size: xx-large;
+}
+
+#Cajacontenido  {
+  position: relative;
+
+
+  font-size: 350%;
+  font-weight: bold;
+  text-align: justify;
+
+
+ z-index: 5;
+}
+#contenidoEfecto {
+  position: absolute;
+   top: 0%;
+z-index: 5;
+}
+#contenidoEfecto.mover{
+  animation: scroll 100s linear ;
+}
+@keyframes scroll {
+ 0%   { top: 100%; }
+ 100% { top: -170%; }
+}
 
 
 @media screen and (max-width: 575px) {
@@ -147,26 +228,6 @@ display: inline;
 
 
 
-.main{
-visibility: hidden;
-
-position: absolute;
-}
-
-.aboutus{
-  position: absolute;
-
-    transform:translate(0%, 100%);
-
-  visibility: hidden;
-    text-align: justify;
-  color: #cc8c22;
-    /*  color: #cc8c22;*/
-  z-index: 5;
-}
-.aboutus p{
-font-size: xx-large;
-}
 
 /*LOGIN*/
 

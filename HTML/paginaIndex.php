@@ -31,9 +31,9 @@
                   <ul class="MenuOpciones">
                     <li onclick="LogIn()"> Log In</li>
                     <li onclick="About()">About Us</li>
-                    <li><a>Mission</a></li>
-                    <li>Vision</li>
-                    <li>Contact</li>
+                    <li onclick="Mision()"><a>Mission</a></li>
+                    <li onclick="Vision()">Vision</li>
+                    <li onclick="Contact()">Contact</li>
 
                   </ul>
                   <ul class="soc" >
@@ -52,14 +52,21 @@
 
 
         <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
-                <main class="main">
-                  <h2>Main</h2>
-                  <p></p>
+          <main class="main" >
 
+          </main>
 
-                </main>
+                <div id="Cajacontenido">
+            <div id="contenidoEfecto">
                 <main class="aboutus"  onclick="detener()">
                   <h2>Sobre Nosotros</h2>
+                  <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                </main>
+
+                <main class="Mision"  onclick="detener()">
+                  <h2>Mision</h2>
                   <p>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
                   </p>
@@ -67,6 +74,25 @@
 
                 </main>
 
+                <main class="Vision"  onclick="detener()">
+                  <h2>Vision</h2>
+                  <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+
+
+                </main>
+
+                <main class="Contact"  onclick="detener()">
+                  <h2>Contacto</h2>
+                  <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+
+
+                </main>
+              </div>
+            </div>
         <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
 
         <div class="login">

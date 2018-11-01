@@ -3,7 +3,12 @@
     padding: 0;
 }
 html, body {
-  height: 100%;
+height: 100%;
+background-color:black;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 aside.responsive,nav.responsive{
   height: 100%;
@@ -84,20 +89,24 @@ margin-left: 2%;
 div.contenido{
 position: absolute;
 height: 100%;
-margin-top: 20%;
+
 margin-left: 20%;
 }
 
 
 
 article{
+
+    overflow: hidden;
   position: static;
 margin-top: 0%;
 height: 100%;
-overflow: hidden; /*Cambiar esto*/
+
 }
 
-
+main{
+  padding-right: 3%;
+}
 .main{
 visibility: hidden;
 
@@ -156,9 +165,9 @@ font-size: xx-large;
 }
 
 #Cajacontenido  {
-  position: relative;
-
-
+  position: absolute;
+overflow: scroll !important;
+    height: 100%;
   font-size: 350%;
   font-weight: bold;
   text-align: justify;
@@ -167,40 +176,49 @@ font-size: xx-large;
  z-index: 5;
 }
 #contenidoEfecto {
-  position: absolute;
+
    top: 0%;
 z-index: 5;
 }
 #contenidoEfecto.mover{
+  overflow: hidden;
+  position: absolute;
   animation: scroll 100s linear ;
 }
+
+
+/*Para que la barra de scroll no aparezca*/
 @keyframes scroll {
  0%   { top: 100%; }
  100% { top: -170%; }
 }
 
+/*Cuando la pantalla se hace más chica y el header se va hacia arriba*/
 
 @media screen and (max-width: 575px) {
+#Cajacontenido{
+      height: 85%;
+}
   article{
 
-
-  margin-top: 20%;
+padding-top: 20%;
   }
   div.contenido{
 margin-top: 0%;
-
-  }
+margin-left: 3%;
+    width: 100%;
+}
   aside.responsive,nav.responsive{
     height: 15%;
-
+position: fixed;
   }
 
-
 ul.MenuOpciones{
-
-      margin-top: 2%;
-      margin-right: 5%;
-    font-size: 20px;
+  margin-top: 0%;
+  margin-right: 5%;
+      padding-top: 5%;
+      font-size: 20px;
+      margin-left: 0%;
 }
 ul.MenuOpciones li{
 display: inline;
@@ -238,7 +256,7 @@ display: inline;
   position: relative;
   z-index: 5;
   margin:0 auto;
-  margin-top: 8%;
+    padding-top: 8%;
 
   max-width:500px;
 }
@@ -392,6 +410,7 @@ display: inline;
 }
 
 .estrellas {
+    height: 100%;
   background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   z-index:0;
 -moz-animation:moverEstrellas 200s linear infinite;
@@ -403,6 +422,7 @@ display: inline;
 }
 
 .Parpadeo{
+    height: 100%;
   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
   z-index:1;
 

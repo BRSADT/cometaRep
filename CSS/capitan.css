@@ -137,16 +137,24 @@ visibility: hidden;
 
 
 @media screen and (max-width: 766px) {
-  #logo{
+  #logo{  height: 100%;
+    width: 100%;
+  /*
+atras
     height: 80%;
-    width: 80%;
+  width: 80%;
     margin-top: 15%;
     margin-left: 10%;
-
+*/
   }
   #info{
 
     margin-top: 26.6vw!important;
+  }
+
+  #logo img{
+    width: 100%;
+
   }
 
 }
@@ -155,17 +163,16 @@ visibility: hidden;
 
 
 #logo img{
-  width: 90%;
- height: 90%;
+  width: 100%;
+
 }
 
 
 #logo{
 
-  height: 80%;
-  width: 80%;
-  margin-top: 15%;
-  margin-left: 10%;
+  height: 100%;
+  width: 100%;
+
 }
 #info{display: block;
   top:15%;

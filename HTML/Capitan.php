@@ -32,7 +32,7 @@
 		<div class="frente">
 
       <div id="logo">
-      <img  src="../imagenes/Fotografias/brendaAvila.png" alt="Italian Trulli">
+      <img  src="../imagenes/Fotografias/capitanaAvila.png" alt="Italian Trulli">
 
 
       </div>

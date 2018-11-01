@@ -19,37 +19,37 @@ height: 100%;
 }
  /*LOGO*/
 
-.circle-container {
+.contenedor-imagenes {
 
 	margin: 0 auto;
   display: block;
   width: 20vw !important;
- height: 20vw!important;
+height: 20vw!important;
 top:15%;
 margin-left:  10%;
   position: relative;
 	perspective: 1000;
 }
 
-.circle-container:hover .circle {
+.contenedor-imagenes:hover .circle {
 	transform: rotate3d(45, 45, 0, 180deg);
 }
 
-.circle-container:hover .outer-ring {
+.contenedor-imagenes:hover .circulo-alrededor {
 	transform: rotate3d(45, 0, 0, 180deg);
 }
 
-.circle-container:hover .outer-outer-ring {
+.contenedor-imagenes:hover .outer-circulo-alrededor {
 	transform: rotate3d(0, 45, 0, 180deg);
 }
 
-.circle-container, .front, .back {
+.contenedor-imagenes, .frente, .atras {
 	width: 175px;
 	height: 175px;
 
 }
 
-.circle, .outer-ring, .outer-outer-ring {
+.circle, .circulo-alrededor, .outer-circulo-alrededor {
 	transition: 0.5s;
 	transform-style: preserve-3d;
 	transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
@@ -62,7 +62,7 @@ margin-left:  10%;
 
 }
 
-.front, .back {
+.frente, .atras {
 	border-radius: 50%;
 	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 	backface-visibility: hidden;
@@ -73,12 +73,12 @@ margin-left:  10%;
   height: 100%;
 }
 
-.front {
+.frente {
 
 	z-index: 2;
 }
 
-.front p {
+.frente p {
 	margin-top: 1.2em;
 	font-family: cabin, sans-serif;
 	font-weight: 700;
@@ -87,18 +87,18 @@ margin-left:  10%;
 	color: #c02227;
 }
 
-.back {
+.atras {
 	transform: rotate3d(45,45,0,180deg);
-	background-color: #fff;
+	atrasground-color: #fff;
 }
 
-.back-logo {
+.atras-logo {
 	width: 60%;
 	display: block;
 	margin: 2em auto;
 }
 
-.outer-ring {
+.circulo-alrededor {
   position: absolute;
       top: -5%;
       left: -5%;
@@ -106,7 +106,7 @@ margin-left:  10%;
       border: 2px solid #fff;
       width: 110%;
       height: 110%;
-      background-color: rgba(255,255,255,0);
+      atrasground-color: rgba(255,255,255,0);
       box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 }
 
@@ -118,7 +118,7 @@ margin-left:  10%;
 	border: 2px solid #fff;
 	width: 211px;
 	height: 211px;
-	background-color: rgba(255,255,255,0);
+	atrasground-color: rgba(255,255,255,0);
 	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
 }
 /*FIN LOGO*/
@@ -126,7 +126,10 @@ margin-left:  10%;
 
 
 @media screen and (max-width: 575px) {
-  #logo{display: none;
+  .contenedor-imagenes{display: none;
+visibility: hidden;
+}
+#info{display: none;
 visibility: hidden;
 }
 }
@@ -135,9 +138,10 @@ visibility: hidden;
 
 @media screen and (max-width: 766px) {
   #logo{
-margin-left:  10% !important;
-    width: 26.6vw !important;
-   height: 26.6vw !important;
+    height: 80%;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
 
   }
   #info{

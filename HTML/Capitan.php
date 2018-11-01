@@ -22,9 +22,36 @@
   <body>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
-<div id="logo">
-<img  src="../imagenes/logoCapitan.png" alt="Italian Trulli">
+
+<div class="circle-container">
+	<div class="outer-ring"></div>
+	<!-- Used for more of a gyroscope type effect
+	<div class="outer-outer-ring"></div>
+	-->
+	<div class="circle">
+		<div class="front">
+
+      <div id="logo">
+      <img  src="../imagenes/logoCapitan.png" alt="Italian Trulli">
+
+
+      </div>
+		</div>
+		<div class="back">
+			<img class="back-logo" src="//theelevationgroup.com/img/logo.svg" alt="The Elevation Group Logo" />
+		</div>
+	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
 <div id="info">
 <p>
 

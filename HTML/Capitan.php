@@ -20,9 +20,23 @@
   </head>
 
   <body>
+    <?php  session_start();
+
+    if(!isset($_SESSION['nombre']))
+    {
+
+         header("refresh:0;url=../HTML/paginaIndex.php?");
+
+
+    }
+    else{
+    ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
 
+          <form method="post" action="../PHP/Salir.php">
+            <input type="submit" value="Salir" class="button"/>
+          </form>
 <div class="contenedor-imagenes">
 	<div class="circulo-alrededor"></div>
 	<!-- Used for more of a gyroscope type effect
@@ -55,7 +69,7 @@
 <div id="info">
 <p>
 
-  <?php  session_start();
+  <?php  
   echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
 
    ?>
@@ -90,5 +104,10 @@
 
 
 </article>
+<?php
+
+}
+
+?>
   </body>
 </html>

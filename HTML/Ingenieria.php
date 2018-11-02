@@ -13,7 +13,7 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="../CSS/capitan.css">
+<link rel="stylesheet" href="../CSS/ingenieria.css">
     <!-- Custom styles for this template <link href="dashboard.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -21,14 +21,48 @@
 
   <body>
 
+<?php  session_start();
+
+if(!isset($_SESSION['nombre']))
+{
+
+     header("refresh:0;url=../HTML/paginaIndex.php?");
+
+
+}
+else{
+?>
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
-<div id="logo">
-<img  src="../imagenes/logoIngenieria.png" alt="Italian Trulli">
-</div>
+
+<form method="post" action="../PHP/Salir.php">
+  <input type="submit" value="Salir" class="button"/>
+</form>
+          <div class="contenedor-imagenes">
+          	<div class="circulo-alrededor"></div>
+          	<!-- Used for more of a gyroscope type effect
+          	<div class="outer-circulo-alrededor"></div>
+          	-->
+          	<div class="circle">
+          		<div class="frente">
+
+                <div id="logo">
+                <img  src="../imagenes/Fotografias/elInge.png" alt="Italian Trulli">
+
+
+                </div>
+          		</div>
+              <div id="logo">
+              <img  src="../imagenes/logoIngenieria.png" alt="Italian Trulli">
+
+          	</div>
+          </div>
+          </div>
+
+
 <div id="info">
 <p>
 
-<?php  session_start();
+<?php
 echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
 
  ?>
@@ -38,6 +72,9 @@ echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
             <nav class="normal navbarflex-md-column flex-row align-items-start py-2">
 
             </nav>
+
+
+
         </aside>
 
 
@@ -64,5 +101,10 @@ echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
 
 
 </article>
+<?php
+
+}
+
+?>
   </body>
 </html>

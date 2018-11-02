@@ -22,7 +22,7 @@
   <body>
     <?php  session_start();
 
-    if(!isset($_SESSION['nombre']))
+    if(!isset($_SESSION['nombre'])||$_SESSION['codigoPuesto']!=1)
     {
 
          header("refresh:0;url=../HTML/paginaIndex.php?");
@@ -69,7 +69,7 @@
 <div id="info">
 <p>
 
-  <?php  
+  <?php
   echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
 
    ?>

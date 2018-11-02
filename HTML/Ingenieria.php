@@ -23,10 +23,10 @@
 
 <?php  session_start();
 
-if(!isset($_SESSION['nombre']))
+if(!isset($_SESSION['nombre'])||$_SESSION['codigoPuesto']!=2)
 {
 
-     header("refresh:0;url=../HTML/paginaIndex.php?");
+     header("refresh:0;url=../PHP/Salir.php?");
 
 
 }

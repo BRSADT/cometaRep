@@ -29,6 +29,8 @@ foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usu
            $link = $consultaObtenerlink->fetch();
 
            session_start();
+           $_SESSION['codigoPuesto']  =  $codigoPuesto['codigoPuesto'];
+
            $_SESSION['codigo']  =  $codigoUser=$datos['usuarioCodigo'];
            $_SESSION['nombre']  =  $codigoUser=$datos['usuarioNombre'];
            $_SESSION['apellido']  =  $codigoUser=$datos['usuarioApellido'];

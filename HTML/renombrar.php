@@ -29,7 +29,7 @@
       <!-- Modal content-->
       <div class="modal-content col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" id="CerrarModal" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Acomode su foto de perfil</h4>
         </div>
         <div class="modal-body">
@@ -39,7 +39,7 @@
 	</figure>-->
   <figure>
   <img src="" id="imagen" alt=""    style=" max-width: 300px;  max-height: 300px;">
-  <input type="button" id="boton_de_recorte" value="recortar">
+  <input type="button" value="recortar">
 	<p>&nbsp;</p>
 </figure>
           <p>Some text in the modal.</p>
@@ -74,8 +74,7 @@
   		});
       $('#boton_de_recorte').on('click', function(){
         if (anchura == 0 || altura == 0) return;
-        alert("hola");
-             $.ajax({
+                 $.ajax({
                 type: 'POST',
                 url: '../PHP/crearRecorte.php',
                 data: data,
@@ -99,7 +98,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default"  id="boton_de_recorte" data-dismiss="modal">Guardar</button>
         </div>
       </div>
 
@@ -114,12 +113,40 @@ var data;
 var dataURL;
   var preview = document.querySelector('img');
 $(document).ready(function(){
+/*  $('#myModal').modal({
+    backdrop: 'static',   // This disable for click outside event
+    keyboard: true,        // This for keyboard event
+    display: none,
+})
+*/
+
+$('#CerrarModal').on('click', function(){
+    $(".imgareaselect-outer").css("display", "none");
+//$('*[class^="imgareaselect"]').css("display", "none");
+var hijo=$('*[class^="imgareaselect"]');
+var padre=hijo.eq(0).parent();
+padre.css("display", "none");
+});
+
+
+
   $("#avatar").on('change', function() {
     $('html, body').css({
     overflow: 'hidden !important',
     });
 
+
+    $(".imgareaselect-outer").css("display", "block");
+//$('*[class^="imgareaselect"]').css("display", "none");
+var hijo=$('*[class^="imgareaselect"]');
+var padre=hijo.eq(0).parent();
+padre.css("display", "block");
+
+
+
           $("#myModal").modal();
+
+
           var reader = new FileReader();
            reader.onload = function(){
                $("#imagen").attr('src', reader.result).show();
@@ -139,6 +166,9 @@ $(document).ready(function(){
  }
 
     });
+
+
+
 
 
 

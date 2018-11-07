@@ -18,10 +18,9 @@ $title = $_POST['title'];
 fwrite($myfile, $x1);
 
 
-// File name
 $file_name = $_FILES['file']['name'];
 
-// File extension
+
 $file_type = pathinfo($file_name, PATHINFO_EXTENSION);
 
 
@@ -82,8 +81,6 @@ $manejadorDeOrigen = imagecreatefromjpeg($_FILES['file']['tmp_name']);
 $anchoOri=$x2ImagenGuardada-$x1ImagenGuardada;
   $altoOri=$y2ImagenGuardada-$y1ImagenGuardada;
 $manejadorDeDestino = ImageCreateTrueColor($anchoOri,$altoOri);
-//$anchura=$x2ImagenRECORTADA-$x1ImagenRECORTADA;
-//$altura=$y2ImagenRECORTADA-$y1ImagenRECORTADA;
 imagecopyresampled(
   $manejadorDeDestino,
   $manejadorDeOrigen,
@@ -96,11 +93,8 @@ $y1ImagenGuardada,
  $anchoOri,
  $altoOri
 );
-fwrite($myfile, " datos 	  $x1ImagenRECORTADA,$y1ImagenRECORTADA,$x1ImagenGuardada, $y1ImagenGuardada,    $anchoImagenrecortada,   $altoImagenrecortada,$anchoOri,  $altoOri ");
 
-
-
-imagejpeg($manejadorDeDestino, $file_name, 100);
+imagejpeg($manejadorDeDestino,"../Imagenes/Fotografias/".$file_name, 100);
 
 }
 

@@ -8,10 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+      <title>Dashboard Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='../img_area_select/css/imgareaselect-animated.css'>
+  <link rel='stylesheet' href='../img_area_select/css/imgareaselect-default.css'>
+  <script src="../img_area_select/img_area_select/js/jquery.imgareaselect.js"></script>
+  <script src="../JavaScript/AbrirModal.js"></script>
 
-
-    <title>Dashboard Template for Bootstrap</title>
-       <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
  <script src="../JavaScript/CambioDePaginaCapitan.js"></script>
   <script src="../JavaScript/validacion.js"></script>
     <script src="../JavaScript/filtrousuarios.js"></script>
@@ -63,6 +68,11 @@
 	<!-- Used for more of a gyroscope type effect
 	<div class="outer-circulo-alrededor"></div>
 	-->
+  <input type="file"
+         id="avatar" name="avatar" style="opacity: .0; position: absolute; display: block; height: 100%; width: 100%;z-index: 3;"
+         accept="image/png, image/jpeg" />
+
+
 	<div class="circle">
 		<div class="frente">
 
@@ -328,6 +338,43 @@
 
 
 </article>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+  <h4 class="modal-title">Acomode su foto de perfil</h4>
+        <button type="button" id="CerrarModal" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <figure>
+        <img src="" id="imagen" alt=""    style=" max-width: 300px;  max-height: 300px;">
+        
+      </figure>
+      </div>
+
+
+
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"  id="boton_de_recorte" data-dismiss="modal">Guardar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+</div>
 
 
 

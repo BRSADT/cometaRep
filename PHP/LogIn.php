@@ -14,7 +14,7 @@ if($conexion!=NULL){
 
 
 
-foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usuarioLogIn,usuarioContrasena from usuario') as $datos) {
+foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usuarioLogIn,usuarioContrasena,usuarioFoto from usuario') as $datos) {
 
            if( strcmp (   $datos['usuarioLogIn'] , $usuario )==0){
 
@@ -34,6 +34,7 @@ foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usu
            $_SESSION['codigo']  =  $codigoUser=$datos['usuarioCodigo'];
            $_SESSION['nombre']  =  $codigoUser=$datos['usuarioNombre'];
            $_SESSION['apellido']  =  $codigoUser=$datos['usuarioApellido'];
+           $_SESSION['usuarioFoto']  =  $datos['usuarioFoto'];
            $_SESSION['instante']   = time();
            $estadoAcceso=2;
          }

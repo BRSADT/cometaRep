@@ -77,8 +77,8 @@
 		<div class="frente">
 
       <div id="logo">
-      <img  src="../imagenes/Fotografias/capitanaAvila.png" alt="Italian Trulli">
-
+       <?php
+       echo "<img src=../imagenes/Fotografias/".$_SESSION['usuarioFoto'].".jpg>";?>
 
       </div>
 		</div>
@@ -101,8 +101,7 @@
 <p>
 
   <?php
-  echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'] ;
-
+  echo " ".$_SESSION['nombre']." ".$_SESSION['apellido']."--- ".$_SESSION['usuarioFoto'] ;
    ?>
 </p>
 </div>
@@ -354,7 +353,7 @@
       <div class="modal-body">
         <figure>
         <img src="" id="imagen" alt=""    style=" max-width: 300px;  max-height: 300px;">
-        
+
       </figure>
       </div>
 

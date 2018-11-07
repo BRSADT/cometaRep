@@ -171,12 +171,26 @@ nav{
 }
 
 
-
+#pestaña{
+  position: absolute;
+    right: 2%;
+    height: 10%;
+    min-width: 100%;
+    display: inline;
+}
 
 #logo img{
   width: 100%;
 height: 100%;
      border-radius: 50%;
+}
+.planeta .hydrated{
+  right: 2%;
+position: absolute;
+height: 100%;
+width: 100%;
+display: inline;
+left: auto;
 }
 
 

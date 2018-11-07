@@ -28,7 +28,7 @@ if(!isset($_SESSION['nombre'])||$_SESSION['codigoPuesto']!=2)
 
      header("refresh:0;url=../PHP/Salir.php?");
 
-//hola
+//hola s
 }
 else{
 ?>

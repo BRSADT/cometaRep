@@ -63,35 +63,38 @@
           <form method="post" action="../PHP/Salir.php">
             <input type="submit" value="Salir" class="button"/>
           </form>
-<div class="contenedor-imagenes">
-	<div class="circulo-alrededor"></div>
-	<!-- Used for more of a gyroscope type effect
-	<div class="outer-circulo-alrededor"></div>
-	-->
-  <input type="file"
-         id="avatar" name="avatar" style="opacity: .0; position: absolute; display: block; height: 100%; width: 100%;z-index: 3;"
-         accept="image/png, image/jpeg" />
+
+          <div class="contenedor-imagenes">
+            <div class="circulo-alrededor"></div>
+            <!-- Used for more of a gyroscope type effect
+            <div class="outer-circulo-alrededor"></div>
+
+            -->
+            <div class="circle">
+
+            <input type="file"
+                     id="avatar" name="avatar" style="opacity: .0; position: absolute; display: block; height: 100%; width: 100%;z-index: 3;"
+                     accept="image/png, image/jpeg" />
+
+              <div class="frente">
+
+                <div id="logo">
+                  <?php
+                  echo "<img src=../imagenes/Fotografias/".$_SESSION['usuarioFoto'];?>
 
 
-	<div class="circle">
-		<div class="frente">
 
-      <div id="logo">
-       <?php
-       echo "<img src=../imagenes/Fotografias/".$_SESSION['usuarioFoto'].".jpg>";?>
+                                  </div>
 
-      </div>
-		</div>
-		<div class="atras">
-			<img class="atras-logo" src="//theelevationgroup.com/img/logo.svg" alt="The Elevation Group Logo" />
-		</div>
-	</div>
+                </div>
+              </div>
+
+  <div class="atras">
+    <div id="logo">
+            	<img class="atras-logo" src="../imagenes/logoCap.png" alt="The Elevation Group Logo" />
+            </div>
+          </div>
 </div>
-
-
-
-
-
 
 
 
@@ -101,7 +104,7 @@
 <p>
 
   <?php
-  echo " ".$_SESSION['nombre']." ".$_SESSION['apellido']."--- ".$_SESSION['usuarioFoto'] ;
+  echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'];
    ?>
 </p>
 </div>
@@ -177,15 +180,18 @@
   					<div class="panel-body">
   						<div class="pull-right">
   							<div class="btn-group">
-  								<button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
-  								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
-  								<button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
+  								<button type="button" class="btn btn-success btn-filter" data-target="Capitan">Capitan</button>
+  								<button type="button" class="btn btn-warning btn-filter" data-target="Ingenieria">Ingenieria</button>
+  								<button type="button" class="btn btn-danger btn-filter" data-target="Investigador">Investigador</button>
   								<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
   							</div>
   						</div>
   						<div class="table-container">
   							<table class="table table-filter">
   								<tbody>
+
+
+                    <!--
   									<tr data-status="pagado">
   										<td>
   											<div class="ckbox">
@@ -199,14 +205,14 @@
   											</a>
   										</td>
   										<td>
-  											<div class="media">
+                    		<div class="media">
   												<a href="#" class="pull-left">
   													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
   												</a>
   												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
+  													<span class="media-meta pull-right">Holas 2016</span>
   													<h4 class="title">
-  														Lorem Impsum
+  														Holas
   														<span class="pull-right pagado">(Pagado)</span>
   													</h4>
   													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
@@ -214,118 +220,69 @@
   											</div>
   										</td>
   									</tr>
-  									<tr data-status="pendiente">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox3">
-  												<label for="checkbox3"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pendiente">(Pendiente)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="cancelado">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox2">
-  												<label for="checkbox2"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right cancelado">(Cancelado)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="pagado" class="selected">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox4" checked>
-  												<label for="checkbox4"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star star-checked">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pagado">(Pagado)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="pendiente">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox5">
-  												<label for="checkbox5"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pendiente">(Pendiente)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
+                     -->
+<?php
+include '../PHP/Conexion.php';
+$con=new conexion();
+$conexion=$con->getConexion();
+if($conexion!=NULL){
+
+
+
+foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usuarioLogIn,usuarioContrasena,usuarioFoto,usuarioFnacimiento from usuario') as $datos) {
+  $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoNombre=:id");
+ $consultaObtenercodPuesto->execute(['id' => $datos['usuarioCodigo']]);
+ $codigoPuesto = $consultaObtenercodPuesto->fetch();
+
+
+ $consultaObtenerPuesto = $conexion->prepare("SELECT nombrePuestos FROM nombresPuestos WHERE Puestos_codigoPuesto=:id");
+  $consultaObtenerPuesto->execute(['id' => $codigoPuesto['codigoPuesto']]);
+ $nombrePuesto = $consultaObtenerPuesto->fetch();
+
+echo"
+<tr data-status='".$nombrePuesto['nombrePuestos']."'>
+    <td>
+      <div class='ckbox'>
+        <input type='checkbox' id='checkbox1'>
+        <label for='checkbox1'></label>
+      </div>
+    </td>
+    <td>
+      <a href='javascript:;' class='star'>
+        <i class='glyphicon glyphicon-star'></i>
+      </a>
+    </td>
+    <td>
+      <div class='media'>
+        <a href='#' class='pull-left'>
+        <img src='../imagenes/Fotografias/".$datos['usuarioFoto']."' class='media-photo'>
+        </a>
+        <div class='media-body'>
+          <span class='media-meta pull-right'></span>
+          <h4 class='title'>
+            ".$datos['usuarioNombre']."   ".$datos['usuarioApellido']."
+            <span class='pull-left pagado'  >(".$nombrePuesto['nombrePuestos'].")</span>
+          </h4>
+          <p class='summary'>
+          Codigo Tripulante:   ".$datos['usuarioCodigo']."
+          <br>
+
+          Edad:   ".$datos['usuarioFnacimiento']."
+          <br>
+
+
+        </p>
+        </div>
+      </div>
+    </td>
+  </tr>
+";
+
+}
+}
+
+?>
+
   								</tbody>
   							</table>
   						</div>

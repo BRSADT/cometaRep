@@ -1,4 +1,5 @@
 <?php
+include 'Conexion.php';
 $x1 = $_POST['x1'];
 $y1 = $_POST['y1'];
 $x2 = $_POST['x2'];
@@ -95,6 +96,22 @@ $y1ImagenGuardada,
 );
 
 imagejpeg($manejadorDeDestino,"../Imagenes/Fotografias/".$file_name, 100);
+
+$con=new conexion();
+$conexion=$con->getConexion();
+if($conexion!=NULL){
+
+
+           session_start();
+           $insertar = $conexion->prepare('UPDATE usuario SET usuarioFoto=:usuarioFoto Where usuarioCodigo=:usuarioCodigo');
+
+
+    $insertar->bindParam(':usuarioFoto', $file_name);
+
+        $insertar->bindParam(':usuarioCodigo', $_SESSION['codigo'] );
+$insertar->execute();
+ $_SESSION['usuarioFoto']=$file_name;
+}
 
 }
 

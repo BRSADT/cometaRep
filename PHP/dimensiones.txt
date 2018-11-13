@@ -1,2 +1,2 @@
-de la imagen en la pagina ancho es  300 largo es 300 su  x1= 37 y1= 7 x2=169 y y2 es 184 ancho seleccion 132 y largo es 177 si se suma x1+anchura =x2 y y1+altura=y2 
-   imagen de 300x300 x= 169 y= 184
+de la imagen en la pagina ancho es  300 largo es 300 su  x1= 66 y1= 162 x2=110 y y2 es 220 ancho seleccion 44 y largo es 58 si se suma x1+anchura =x2 y y1+altura=y2 
+   imagen de 300x300 x= 110 y= 220

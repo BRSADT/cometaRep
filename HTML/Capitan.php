@@ -16,7 +16,7 @@
   <link rel='stylesheet' href='../img_area_select/css/imgareaselect-default.css'>
   <script src="../img_area_select/img_area_select/js/jquery.imgareaselect.js"></script>
   <script src="../JavaScript/AbrirModal.js"></script>
-
+<script src="../JavaScript/eliminar.js"></script>
  <script src="../JavaScript/CambioDePaginaCapitan.js"></script>
   <script src="../JavaScript/validacion.js"></script>
     <script src="../JavaScript/filtrousuarios.js"></script>
@@ -172,15 +172,20 @@
     <p>tabla naves</p>
   </main>
 
+
+
   <main class="InfoUsuarios">
     <section class="content">
   			<h1>Tripulantes</h1>
   			<div class="col-md-8 col-md-offset-2">
   				<div class="panel panel-default">
   					<div class="panel-body">
-  						<div class="pull-right">
+              <div class="pull-left">
+              <input type="text" id="CodigoIngresado" onkeyup="Filtrar()" placeholder="Ingresa Codigo..">
+              </div>
+              <div class="pull-right">
   							<div class="btn-group">
-  								<button type="button" class="btn btn-success btn-filter" data-target="Capitan">Capitan</button>
+                 <button type="button" class="btn btn-success btn-filter" data-target="Capitan">Capitan</button>
   								<button type="button" class="btn btn-warning btn-filter" data-target="Ingenieria">Ingenieria</button>
   								<button type="button" class="btn btn-danger btn-filter" data-target="Investigador">Investigador</button>
   								<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
@@ -188,7 +193,7 @@
   						</div>
   						<div class="table-container">
   							<table class="table table-filter">
-  								<tbody>
+  								<tbody id="tabla">
 
 
                     <!--
@@ -243,8 +248,9 @@ echo"
 <tr data-status='".$nombrePuesto['nombrePuestos']."'>
     <td>
       <div class='ckbox'>
-        <input type='checkbox' id='checkbox1'>
-        <label for='checkbox1'></label>
+
+<input type='checkbox' id='checkbox".$datos['usuarioCodigo']."' name=".$datos['usuarioCodigo'].">
+        <label for='checkbox".$datos['usuarioCodigo']."'></label>
       </div>
     </td>
     <td>
@@ -263,8 +269,8 @@ echo"
             ".$datos['usuarioNombre']."   ".$datos['usuarioApellido']."
             <span class='pull-left pagado'  >(".$nombrePuesto['nombrePuestos'].")</span>
           </h4>
-          <p class='summary'>
-          Codigo Tripulante:   ".$datos['usuarioCodigo']."
+          <p class='summary'style='display:inline;'>
+          Codigo Tripulante: <h4 class='idUsuario' style='display:inline;'>".$datos['usuarioCodigo']."</h4>
           <br>
 
           Edad:   ".$datos['usuarioFnacimiento']."
@@ -284,6 +290,14 @@ echo"
 ?>
 
   								</tbody>
+
+                  <button type="button" class="btnEliminar btn btn-success"
+                  style="
+    position: absolute;
+    bottom: 5%;
+    right: 5%">
+    Eliminar
+  </button>
   							</table>
   						</div>
   					</div>
@@ -343,3 +357,25 @@ echo"
   </body>
 </html>
 <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+<script>
+
+  function Filtrar() {
+      // Declare variables
+      var input, filter, ul, li, h4, i;
+      input = document.getElementById('CodigoIngresado');
+      filter = input.value.toUpperCase();
+      var tabla = document.getElementById("tabla");
+      var tr = tabla.getElementsByTagName('tr');
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+          var summary=tr[i].getElementsByClassName('media-body');
+          var codigos = summary[0].getElementsByClassName('idUsuario');
+          if (codigos[0].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+          } else {
+              tr[i].style.display = "none";
+          }
+      }
+  }
+
+</script>

@@ -23,7 +23,7 @@ if( $datos['usuarioLogIn'] ==$usuario){
 
 if(  $existeusuario==0){
 
-$insertar = $conexion->prepare('INSERT INTO  usuario (usuarioContrasena, usuarioNombre,usuarioApellido,usuarioHabilitado,usuarioLogin,usuarioFnacimiento)  VALUES (:usuarioContrasena, :usuarioNombre,:usuarioApellido,:usuarioHabilitado,:usuarioLogin,:usuarioFnacimiento)');
+$insertar = $conexion->prepare('INSERT INTO  usuario (usuarioContrasena, usuarioNombre,usuarioApellido,usuarioHabilitado,usuarioLogin,usuarioFnacimiento,usuarioFoto)  VALUES (:usuarioContrasena, :usuarioNombre,:usuarioApellido,:usuarioHabilitado,:usuarioLogin,:usuarioFnacimiento,:defecto)');
 
       $insertar->bindParam(':usuarioContrasena', $contrasena);
     $insertar->bindParam(':usuarioNombre', $nombreUsuario);
@@ -31,7 +31,8 @@ $insertar = $conexion->prepare('INSERT INTO  usuario (usuarioContrasena, usuario
     $insertar->bindParam(':usuarioHabilitado', $estadoUsuario);
         $insertar->bindParam(':usuarioLogin', $usuario);
             $insertar->bindParam(':usuarioFnacimiento', $mysqlDate);
-
+            $defecto="defecto";
+      $insertar->bindParam(':defecto', $defecto);
 $insertar->execute();
 
 
@@ -39,6 +40,6 @@ $insertar->execute();
 else {
   echo"existe ya ese usuario";
 }
-
+  header("refresh:0; url=../HTML/capitan.php");
 }
  ?>

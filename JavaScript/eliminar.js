@@ -14,7 +14,7 @@ $(document).ready(function(){
 data = new FormData();
 
   data.append('codigos',valores);
-  alert("hola");
+
             $.ajax({
            type: 'POST',
            url: '../PHP/EliminarUsuario.php',

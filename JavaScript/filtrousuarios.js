@@ -20,25 +20,44 @@ $(document).ready(function () {
 
 
 		function Filtrar() {
-	 	 alert("hola");
+alert("hola")
 	      // Declare variables
-	      var input, filter, ul, li, h4, i;
+	      var input, filter, ul, li, h4, i,p;
 	      input = document.getElementById('CodigoIngresado');
 	      filter = input.value.toUpperCase();
 	      var tabla = document.getElementById("tabla");
 	      var tr = tabla.getElementsByTagName('tr');
 				alert(tr.length);
 	      // Loop through all list items, and hide those who don't match the search query
-	      for (i = 0; i < span.length; i++) {
-	          h4 = span[i].getElementsByTagName("h4")[0];
-	          if (h4.innerHTML.toUpperCase().indexOf(filter) > -1) {
+	      for (i = 0; i < tr.length; i++) {
+					p=tr[i].getElementsByClassName("summary");
+
+	          h4 =p[0].getElementsByTagName("h4");
+
+	          if (h4[0].innerHTML.toUpperCase().indexOf(filter) > -1) {
+	              p[0].style.display = "";
+	          } else {
+	              p[0].style.display = "none";
+	          }
+	      }
+	  }
+
+		function FiltrarNombre() {
+	      // Declare variables
+	      var input, filter, ul, li, h4, i;
+	      input = document.getElementById('NombreIngresado');
+	      filter = input.value.toUpperCase();
+	      var tabla = document.getElementById("tabla");
+	      var tr = tabla.getElementsByTagName('tr');
+		      // Loop through all list items, and hide those who don't match the search query
+	      for (i = 0; i < tr.length; i++) {
+	          h4 = tr[i].getElementsByClassName("title")[0];
+	          if (h4.first().innerHTML.toUpperCase().indexOf(filter) > -1) {
 	              span[i].style.display = "";
 	          } else {
 	              span[i].style.display = "none";
 	          }
 	      }
 	  }
-
-
 
  });

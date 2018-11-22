@@ -13,9 +13,12 @@ for ($i=0; $i < sizeof($codigos) ; $i++) {
     fwrite($myfile, "");
 try {
   fwrite($myfile, $codigos[$i]);
-  $eliminar = $conexion->prepare('DELETE from  usuario  where usuarioCodigo = '.$codigos[$i].'');
 
-  //$eliminar->bindParam(':Codigo', '4');
+
+
+  $eliminar = $conexion->prepare('DELETE from  usuario  where usuarioCodigo = :Codigo');
+  //se tuvo que usar bind value por la referencia
+  $eliminar->bindValue(":Codigo",  $codigos[$i], PDO::PARAM_STR);
     $eliminar->execute();
 
 } catch (\Exception $e) {

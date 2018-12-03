@@ -138,8 +138,7 @@
               <div class="contact-image">
                   <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
               </div>
-              <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" onsubmit="return validacionUsuario()" >
-                            <h3>Registra una nave </h3>
+             <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" onsubmit="return validacionUsuario()" >                            <h3>Registra una nave </h3>
                  <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">

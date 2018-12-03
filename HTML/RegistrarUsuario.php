@@ -23,6 +23,7 @@
         <script src="../JavaScript/ModificarUsuario.js"></script>
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/capitan.css">
+<link rel="stylesheet" href="../CSS/RegistrarNave.css">
 <link rel="stylesheet" href="../CSS/tablausuarios.css">
 <link rel="stylesheet" href="../CSS/ionicons.min.css">
     <!-- Custom styles for this template <link href="dashboard.css" rel="stylesheet">-->
@@ -44,15 +45,22 @@
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+          <div id="fondoAside">
+                      <img src="../Imagenes/fondo" class="stretch" alt="" />
+                  </div>
           <div id="pestaña">
     <ion-icon name="planet" class="planeta" style="
-    right: 2%;
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  display: inline;
-  left: auto;
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    display: inline;
+        left: -20%;
 "></ion-icon>
+
+
+
+
+
         <ul class="contenido-capitan">
           <li onclick="registroUsuario()">Registrar usuario</li>
           <li onclick="registroNave()">Registrar nave</li>
@@ -119,10 +127,13 @@
 
 
 <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+  <div id="fondoarticle">
+       <img src="../Imagenes/puntos" class="stretch" alt="" />
+   </div>
 
 
-                      
-  <main class="RegistroUsuario">
+
+<!--  <main class="RegistroUsuario">
     <form action="../PHP/RegistrarUsuario.php" id="RegUsuario" method="post" onsubmit="return validacionUsuario()" >
       Nombre: <input type="text" name="nombre" id="NombreUsuario" ><br>
       Apellido: <input type="text" name="apellido" id="ApellidoUsuario" ><br>
@@ -138,9 +149,52 @@
       <input type="submit" value="Registrar">
     </form>
   </main>
+-->
+
+  <div class="registrarNave">
+
+    <div class="container contact-form">
+                <div class="contact-image">
+                    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                </div>
+                <form action="../PHP/RegistrarUsuario.php" id="RegUsuario" method="post" onsubmit="return validacionUsuario()" >
+                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="nombre" id="NombreUsuario" class="form-control" placeholder="Nombre Tripulante" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="apellido" id="ApellidoUsuario" class="form-control" placeholder="Apellido Tripulante" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario Tripulante" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="fechanac" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contrasena" id="Password" class="form-control" placeholder="Contraseña" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <select id="EstadoUsuario" name="estadousuario" class="form-control" >
+                                 <option value="habilitado">Habilitado</option>
+                                 <option value="proceso">Proceso</option>
+                                 <option value="baja">Baja</option>
+                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="btnSubmit" class="btnContact" value="Enviar" />
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+    </div>
 
 
-
+    </div>
 
 
 

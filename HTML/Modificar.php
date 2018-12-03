@@ -47,19 +47,20 @@
 }
         else{
         $codigo=$_GET['d'];
-echo $codigo;
 
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+          <div id="fondoAside">
+          <img src="../Imagenes/fondo" class="stretch" alt="" />
+      </div>
           <div id="pestaña">
     <ion-icon name="planet" class="planeta" style="
-    right: 2%;
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  display: inline;
-  left: auto;
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    display: inline;
+        left: -20%;
 "></ion-icon>
         <ul class="contenido-capitan">
           <li onclick="registroUsuario()">Registrar usuario</li>
@@ -127,6 +128,9 @@ echo $codigo;
 
 
 <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+  <div id="fondoarticle">
+      <img src="../Imagenes/puntos" class="stretch" alt="" />
+  </div>
 
 
                         <main class="main">
@@ -199,20 +203,19 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
 ";
 }
 ?>
-    <a href="#" class="btn btn-primary">My Sales Performance</a>
-    <a href="#" class="btn btn-primary">Team Sales Performance</a>
+
   </div>
 </div>
 </div>
    <div class="panel-footer">
-          <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+          <a data-original-title="Broadcast Message"  style="display='hidden'" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"></a>
           <span class="pull-right">
 
 <?php
            echo "<a href='editarUsuario.php?codigo=$codigo'data-original-title='Edit this user' data-toggle='tooltip' type='button' class='btn btn-sm btn-warning'><i class='glyphicon glyphicon-edit'></i></a>";
  ?>
 
-              <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+              <a href='tablausuarios.php' data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
           </span>
       </div>
 

@@ -50,12 +50,11 @@
           </div>
           <div id="pestaña">
     <ion-icon name="planet" class="planeta" style="
-    right: 2%;
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  display: inline;
-  left: auto;
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    display: inline;
+        left: -20%;
 "></ion-icon>
         <ul class="contenido-capitan">
           <li onclick="registroUsuario()">Registrar usuario</li>

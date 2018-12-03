@@ -17,7 +17,7 @@ if($conexion!=NULL){
 foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usuarioLogIn,usuarioContrasena,usuarioFoto from usuario') as $datos) {
 
            if( strcmp (   $datos['usuarioLogIn'] , $usuario )==0){
-
+          echo  $datos['usuarioLogIn'];
          if(strcmp (   $datos['usuarioContrasena'] , $contra )==0){
            $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoNombre=:id");
           $consultaObtenercodPuesto->execute(['id' => $datos['usuarioCodigo']]);
@@ -40,9 +40,17 @@ foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usu
          }
        }
     }
-if($estadoAcceso=2&&   $_SESSION['codigo'] !=NULL){
+if($estadoAcceso==2 ){
+  if( $_SESSION['codigo'] !=NULL){
   $linkHeader=$link['link'];
     header("refresh:0; url=../HTML/$linkHeader");
+}}
+else
+{
+  $message = "Lo sentimos, datos incorrectos";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+    header("refresh:0; url=../HTML/paginaIndex.php");
+
 }
 
 

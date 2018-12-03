@@ -7,7 +7,7 @@ var codigo=$(this).attr("class");
 codigo=codigo.split("ModificarUsuario") ;
 var d=codigo[1];
 codigo=codigo
-alert(codigo);// codigo del usuario
+
 var data;
 data = new FormData();
 data.append('codigo',codigo);

@@ -18,8 +18,6 @@ $genero=$_POST["genero"];
 
 $con=new conexion();
 $conexion=$con->getConexion();
-echo $codigo;
-echo"hola";
 if($conexion!=NULL){
 
 
@@ -38,4 +36,6 @@ $insertar->execute();
 
 
 }
+
+header("refresh:0; url=../HTML/TablaUsuarios.php");
  ?>

@@ -42,14 +42,17 @@
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+          <div id="fondoAside">
+              <img src="../Imagenes/fondo" class="stretch" alt="" />
+          </div>
           <div id="pestaña">
     <ion-icon name="planet" class="planeta" style="
-    right: 2%;
+
   position: absolute;
   height: 100%;
   width: 20%;
   display: inline;
-  left: auto;
+      left: -20%;
 "></ion-icon>
         <ul class="contenido-capitan">
           <li onclick="registroUsuario()">Registrar usuario</li>
@@ -117,14 +120,16 @@
 
 
 <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+  <div id="fondoarticle">
+      <img src="../Imagenes/puntos" class="stretch" alt="" />
+  </div>
 
 
 
-
-  <main class="InfoUsuarios">
+  <main class="Info-Naves">
     <section class="content">
   			<h1>Naves</h1>
-  			<div class="col-md-8 col-md-offset-2">
+  			<div id="tabla-naves" class="col-md-8 col-md-offset-2">
   				<div class="panel panel-default">
   					<div class="panel-body">
               <div class="pull-left">
@@ -194,7 +199,7 @@ echo"
         <a href='#' class='pull-left'>
         <img src='../imagenes/Naves/".$datos['naveFoto']."' class='media-photo'>
         </a>
-        <div class='media-body'>
+        <div   id='anchura' style=' max-width: 100%;'>
           <span class='media-meta pull-right'></span>
           <h4 class='title'>
         <em class=ModificarUsuario".$datos['naveCodigo'].">   ".$datos['naveAlias']."</em>
@@ -227,7 +232,7 @@ echo"
                   <button type="button" class="btnEliminar btn btn-success"
                   style="
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     right: 5%">
     Eliminar
   </button>

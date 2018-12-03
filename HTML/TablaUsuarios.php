@@ -42,14 +42,18 @@
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+          <div id="fondoAside">
+                       <img src="../Imagenes/fondo" class="stretch" alt="" />
+                   </div>
+
           <div id="pestaña">
     <ion-icon name="planet" class="planeta" style="
-    right: 2%;
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  display: inline;
-  left: auto;
+
+      position: absolute;
+      height: 100%;
+      width: 20%;
+      display: inline;
+          left: -20%;
 "></ion-icon>
         <ul class="contenido-capitan">
           <li onclick="registroUsuario()">Registrar usuario</li>
@@ -117,6 +121,9 @@
 
 
 <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+  <div id="fondoarticle">
+        <img src="../Imagenes/puntos" class="stretch" alt="" />
+    </div>
 
 
 
@@ -212,8 +219,8 @@ echo"
         <a href='#' class='pull-left'>
         <img src='../imagenes/Fotografias/".$datos['usuarioFoto']."' class='media-photo'>
         </a>
-        <div class='media-body'>
-          <span class='media-meta pull-right'></span>
+        <div   id='anchura' style=' max-width: 100%;'>
+              <span class='media-meta pull-right'></span>
           <h4 class='title'>
         <em class=ModificarUsuario".$datos['usuarioCodigo'].">   ".$datos['usuarioNombre']."   ".$datos['usuarioApellido']." </em>
             <span class='pull-left pagado'  >(".$nombrePuesto['nombrePuestos'].")</span>
@@ -240,13 +247,16 @@ echo"
 
   								</tbody>
 
-                  <button type="button" class="btnEliminar btn btn-success"
-                  style="
-    position: absolute;
-    bottom: 5%;
-    right: 5%">
-    Eliminar
-  </button>
+
+  <button type="button" class="btnEliminar btn btn-success"
+                    style="
+      position: absolute;
+      bottom: 10%;
+      right: 5%">
+      Eliminar
+    </button>
+
+
   							</table>
   						</div>
   					</div>

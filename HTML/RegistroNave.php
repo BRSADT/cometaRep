@@ -14,6 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel='stylesheet' href='../img_area_select/css/imgareaselect-animated.css'>
   <link rel='stylesheet' href='../img_area_select/css/imgareaselect-default.css'>
+
   <script src="../img_area_select/img_area_select/js/jquery.imgareaselect.js"></script>
   <script src="../JavaScript/AbrirModal.js"></script>
 <script src="../JavaScript/eliminar.js"></script>
@@ -23,6 +24,7 @@
         <script src="../JavaScript/ModificarUsuario.js"></script>
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/capitan.css">
+<link rel="stylesheet" href="../CSS/RegistrarNave.css">
 <link rel="stylesheet" href="../CSS/tablausuarios.css">
 <link rel="stylesheet" href="../CSS/ionicons.min.css">
     <!-- Custom styles for this template <link href="dashboard.css" rel="stylesheet">-->
@@ -44,15 +46,19 @@
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+          <div id="fondoAside">
+                      <img src="../Imagenes/fondo" class="stretch" alt="" />
+                  </div>
           <div id="pestaña">
-    <ion-icon name="planet" class="planeta" style="
-    right: 2%;
-  position: absolute;
-  height: 100%;
-  width: 20%;
-  display: inline;
-  left: auto;
-"></ion-icon>
+            <ion-icon name="planet" class="planeta" style="
+
+              position: absolute;
+              height: 100%;
+              width: 20%;
+              display: inline;
+                  left: -20%;
+            "></ion-icon>
+
         <ul class="contenido-capitan">
           <li onclick="registroUsuario()">Registrar usuario</li>
           <li onclick="registroNave()">Registrar nave</li>
@@ -119,25 +125,44 @@
 
 
 <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+  <div id="fondoarticle">
+        <img src="../Imagenes/puntos" class="stretch" alt="" />
+    </div>
 
 
 <!--Modificar para nave -->
-  <main class="RegistroNave">
-    <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" onsubmit="return validacionUsuario()" >
-      Nombre Nave: <input type="text" name="nombre" id="NombreUsuario" ><br>
-      Estado: <select id="EstadoUsuario" name="estadousuario">
-        <option value="habilitado">Habilitado</option>
-        <option value="proceso">Proceso</option>
-        <option value="baja">Baja</option>
-        </select>
-        <br>
-      <input type="submit" value="Registrar">
-    </form>
-  </main>
+
+<div class="registrarNave">
+
+  <div class="container contact-form">
+              <div class="contact-image">
+                  <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+              </div>
+              <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" onsubmit="return validacionUsuario()" >
+                            <h3>Registra una nave </h3>
+                 <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" name="nombre" id="NombreUsuario" class="form-control" placeholder="Nombre Nave" value="" />
+                          </div>
+                          <div class="form-group">
+                              <select id="EstadoUsuario" name="estadousuario" class="form-control" >
+                               <option value="habilitado">Habilitado</option>
+                               <option value="proceso">Proceso</option>
+                               <option value="baja">Baja</option>
+                               </select>
+                          </div>
+                          <div class="form-group">
+                              <input type="submit" name="btnSubmit" class="btnContact" value="Enviar" />
+                          </div>
+                      </div>
+
+                  </div>
+              </form>
+  </div>
 
 
-
-
+  </div>
 
 
 

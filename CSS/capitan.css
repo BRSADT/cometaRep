@@ -17,7 +17,9 @@ html, body {
 
 @import url("https://fonts.googleapis.com/css?family=Bungee+Shade");
 
-
+#anchura {
+     max-width: 100% !important;
+}
 
 .Bienvenida p {
   --f-size: 40;
@@ -140,9 +142,32 @@ html, body {
     --top: 1;
   }
 }
+.Info-Naves{
+  height: 75%;
+  top: 25%;
+  position: absolute;
+  width: 100%;
+}
+.Info-Naves h1{
+  position: absolute;
+  top: 0%;
 
+  left: 40%;
+  width: 16%;
+}
 
+#tabla-naves{
+  position: absolute;
+top: 10%;
+}
 
+.contenido-capitan {
+  position: relative;
+  left: 2%;
+  top: 40%;
+  color: white;
+
+}
 
 /*
 prueba
@@ -286,8 +311,9 @@ margin-left:  10%;
 /*PESTAÑAS*/
 
 #pestaña{
+      left: 102%;
   position: absolute;
-    right: 2%;
+
     height: 10%;
     min-width: 100%;
     display: inline;

@@ -31,6 +31,7 @@
   </head>
 
   <body>
+
     <?php  session_start();
 
     if(!isset($_SESSION['nombre'])||$_SESSION['codigoPuesto']!=1)
@@ -43,7 +44,10 @@
     else{
     ?>
 
-        <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+        <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0  fixed-top ">
+          <div id="fondoAside">
+              <img src="../Imagenes/fondo" class="stretch" alt="" />
+          </div>
           <div id="pestaña">
     <ion-icon name="planet" class="planeta" style="
     right: 2%;
@@ -119,62 +123,14 @@
 
 
 <article class="col-lg-9  offset-lg-3 col-md-9  offset-md-3 col-sm-8  offset-sm-4">
+  <div id="fondoarticle">
+      <img src="../Imagenes/puntos" class="stretch" alt="" />
+  </div>
+                    <div class="Bienvenida">
 
+                      <p data-text="PSYCHO">Bienvenido</p>
 
-                        <main class="main">
-                        <h2>Main</h2>
-                        <i class="icon ion-alert "></i> - Using i tag
-<br/>
-<span class="ion-alert-circled"></span> - Using span tag
-          <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics,
-              raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation.
-              Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
-
-          <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb
-              readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies,
-              forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
-
-          <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb
-              readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies,
-              forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
-
-
-
-        </main>
-  <main class="RegistroUsuario">
-    <form action="../PHP/RegistrarUsuario.php" id="RegUsuario" method="post" onsubmit="return validacionUsuario()" >
-      Nombre: <input type="text" name="nombre" id="NombreUsuario" ><br>
-      Apellido: <input type="text" name="apellido" id="ApellidoUsuario" ><br>
-      Usuario: <input type="text" name="usuario" id="Usuario"><br>
-      contrasena: <input type="text" name="contrasena"  id="Password"><br>
-      Fecha de nacimiento: <input type="date" name="fechanac" id="FechaNac" ><br>
-      Estado: <select id="EstadoUsuario" name="estadousuario">
-        <option value="habilitado">Habilitado</option>
-        <option value="proceso">Proceso</option>
-        <option value="baja">Baja</option>
-        </select>
-        <br>
-      <input type="submit" value="Registrar">
-    </form>
-  </main>
-
-
-  <main class="RegistroNave">
-    <form action="#" method="Post">
-      Nave Alias: <input type="text" name="nombre"><br>
-      Nave Descripcion: <input type="text" name="usuario"><br>
-      NaveStatus: <input type="date" name="fechanac"><br>
-    <input type="submit" value="Registrar">
-    </form>
-  </main>
-
-  <main class="InfoNaves">
-
-    <p>tabla naves</p>
-  </main>
-
-
-
+                    </div>
 
 
 </article>

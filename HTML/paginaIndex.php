@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Bienvenido</title>
          <script src="../JavaScript/cambioDeInfoIndex.js"></script>
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/paginaPrincipal.css">
@@ -30,12 +30,12 @@
                     <!--    <div class="collapse navbar-collapse align-items-start">  -->
                 <div class="contenido">
                   <ul class="MenuOpciones">
-                    <li onclick="LogIn()" onmouseover="Laser()"> Log In</li>
-                    <li onclick="About()" onmouseover="Laser()">About Us</li>
-                    <li onclick="Mision()"onmouseover="Laser()" ><a>Mission</a></li>
-                    <li onclick="Vision()"onmouseover="Laser()">Vision</li>
-                    <li onclick="Contact()"onmouseover="Laser()">Contact</li>
-
+                    <li onclick="LogIn()" onmouseover="Laser()">Log in</li>
+                    <li onclick="About()" onmouseover="Laser()">Sobre nosotros</li>
+                    <li onclick="Mision()"onmouseover="Laser()" ><a>Misión</a></li>
+                    <li onclick="Vision()"onmouseover="Laser()">Visión</li>
+                    <li onclick="Contact()"onmouseover="Laser()">Contacto</li>
+                    <li onclick="Contact()"onmouseover="Laser()">Presentación</li>
                   </ul>
                   <ul class="soc" >
                     <li><a href="#" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg></a></li>
@@ -62,17 +62,14 @@
                 <main class="aboutus"  onclick="detener()">
                   <h2>Sobre Nosotros</h2>
                   <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-
+                  Lorem ipsum dolor sit amet consectetur adipiscing, elit natoque suspendisse tellus. At augue natoque consequat iaculis aptent elementum ullamcorper litora blandit facilisi, conubia est sagittis faucibus class sociosqu viverra massa interdum. Per sodales hac pellentesque eu aptent pharetra sapien aliquet arcu maecenas, suscipit interdum velit potenti sem vitae quisque lectus ligula natoque lacinia, sagittis justo non gravida risus integer curae volutpat rhoncus.
                   </p>
                 </main>
 
                 <main class="Mision"  onclick="detener()">
                   <h2>Mision</h2>
                   <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                  </p>
+                  Lorem ipsum dolor sit amet consectetur adipiscing, elit natoque suspendisse tellus. At augue natoque consequat iaculis aptent elementum ullamcorper litora blandit facilisi, conubia est sagittis faucibus class sociosqu viverra massa interdum. Per sodales hac pellentesque eu aptent pharetra sapien aliquet arcu maecenas, suscipit interdum velit potenti sem vitae quisque lectus ligula natoque lacinia, sagittis justo non gravida risus integer curae volutpat rhoncus.</p>
 
 
                 </main>
@@ -80,8 +77,7 @@
                 <main class="Vision"  onclick="detener()">
                   <h2>Vision</h2>
                   <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                  </p>
+                  Lorem ipsum dolor sit amet consectetur adipiscing, elit natoque suspendisse tellus. At augue natoque consequat iaculis aptent elementum ullamcorper litora blandit facilisi, conubia est sagittis faucibus class sociosqu viverra massa interdum. Per sodales hac pellentesque eu aptent pharetra sapien aliquet arcu maecenas, suscipit interdum velit potenti sem vitae quisque lectus ligula natoque lacinia, sagittis justo non gravida risus integer curae volutpat rhoncus.</p>
 
 
                 </main>
@@ -89,7 +85,9 @@
                 <main class="Contact"  onclick="detener()">
                   <h2>Contacto</h2>
                   <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                  ¿Listo para la aventura? <hr>
+                  Envianos tu CV al siguiente correo: reclutamiento@cometa.mx <hr>
+                  O llamanos al siguiente numero: 01-800-QuieroIrAlEspacio
                   </p>
 
 
@@ -112,11 +110,7 @@
             <input type="password" name="contra" required >
             <br>
 
-            <input type="submit" value="Submit" class="login-button"/>
-            <br>
-            <a class="sign-up">Sign Up!</a>
-            <br>
-            <h6 class="no-access">Can't access your account?</h6>
+            <input type="submit" value="Ingresar" class="btn btn-primary"/>
           </div>
         </div>
 </form>

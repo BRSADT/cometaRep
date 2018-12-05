@@ -1,16 +1,17 @@
 <?php
 include 'Conexion.php';
 
-$codigos=$_POST['codigos'];
+$codigos=json_decode($_POST['codigosE']);
 $myfile=fopen("file.txt","w");
 $con=new conexion();
 $conexion=$con->getConexion();
 if($conexion!=NULL){
-
-
-
+    fwrite($myfile, "prueba");
+  fwrite($myfile, sizeof($codigos));
+fwrite($myfile, "---");
+fwrite($myfile, $codigos[0]);
 for ($i=0; $i < sizeof($codigos) ; $i++) {
-    fwrite($myfile, "");
+    fwrite($myfile, "**");
 try {
   fwrite($myfile, $codigos[$i]);
 
@@ -28,7 +29,7 @@ try {
 
 }
 
-
+header("Refresh:0");
 }
 
 

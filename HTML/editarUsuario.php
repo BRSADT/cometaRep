@@ -206,10 +206,7 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
           <td>Genero</td>
           <td id='genero' class='editable' >".$obtenerUsuario['usuarioGenero']."</td>
         </tr>
-          <tr>
-          <td>Estado</td>
-          <td>".$obtenerUsuario['usuarioHabilitado']."</td>
-        </tr>
+        
 <input type = 'codigo'  name='codigo' style = ' visibility: hidden;' value=".$codigo." />
       </tbody>
     </table>
@@ -224,7 +221,7 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
    <div class="panel-footer">
           <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"></a>
           <span class="pull-right">
-          <input type="submit"<a href="editarUsuario.php" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"></a> 
+          <input type="submit"<a href="editarUsuario.php" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"></a>
 
                         <a href='tablausuarios.php' data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
                     </span>

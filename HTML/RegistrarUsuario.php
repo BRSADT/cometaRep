@@ -171,12 +171,20 @@
                                 <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario Tripulante" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="date" name="fechanac" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" />
+                            <h6  style="font-weight: 600;  text-align: center;">  Fecha Nacimiento   </h6>   <input type="date" name="fechanac" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" />
                             </div>
+                            <div class="form-group">
+                          <h6  style="font-weight: 600;  text-align: center;">  Fecha Contratacion </h6>   <input type="date" name="fechacontratacion" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" />
+                            </div>
+                              </div>
+                            <div class="col-md-6">
+
                             <div class="form-group">
                                 <input type="text" name="contrasena" id="Password" class="form-control" placeholder="Contraseña" value="" />
                             </div>
-
+                            <div class="form-group">
+                              <select name='genero' class="form-control" > <option  selected value='Masculino'>Masculino</option> <option  value='Femenino'>Femenino</option> <option  value='Otro'>Otro</option>  </select>
+                              </div>
                             <div class="form-group">
                                 <select id="EstadoUsuario" name="estadousuario" class="form-control" >
                                  <option value="habilitado">Habilitado</option>
@@ -185,9 +193,13 @@
                                  </select>
                             </div>
                             <div class="form-group">
+                            <select name='puesto' class="form-control" >  <option selected value='Capitan'>Capitan</option> <option value='Ingenieria'>Ingenieria</option> <option value='Comandante'>Comandante</option>  </select>
+                            </div>
+                            <div class="form-group">
                                 <input type="submit" name="btnSubmit" class="btnContact" value="Enviar" />
                             </div>
                         </div>
+
 
                     </div>
                 </form>

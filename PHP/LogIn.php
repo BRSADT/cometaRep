@@ -19,7 +19,7 @@ foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usu
            if( strcmp (   $datos['usuarioLogIn'] , $usuario )==0){
           echo  $datos['usuarioLogIn'];
          if(strcmp (   $datos['usuarioContrasena'] , $contra )==0){
-           $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoNombre=:id");
+           $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoUsuario=:id");
           $consultaObtenercodPuesto->execute(['id' => $datos['usuarioCodigo']]);
           $codigoPuesto = $consultaObtenercodPuesto->fetch();
 

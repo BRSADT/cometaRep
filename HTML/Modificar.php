@@ -25,14 +25,17 @@
 <link rel="stylesheet" href="../CSS/capitan.css">
 <link rel="stylesheet" href="../CSS/tablausuarios.css">
 <link rel="stylesheet" href="../CSS/ionicons.min.css">
-    <!-- Custom styles for this template <link href="dashboard.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="../CSS/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
 
   </head>
 
   <body>
     <?php
+
+
     session_start();
+
 
 
     if(!isset($_SESSION['nombre'])||$_SESSION['codigoPuesto']!=1)
@@ -40,14 +43,13 @@
          header("refresh:0;url=../HTML/paginaIndex.php?");
     }
     else{
-      if(!isset($_GET['d']))
+      if(!isset($_SESSION['codigoUsuarioMod']))
 
-{        header("refresh:0;url=../HTML/capitan.php?");
-
+{
+     header("refresh:0;url=../HTML/tablausuarios.php?");
 }
         else{
-        $codigo=$_GET['d'];
-
+        $codigo=  $_SESSION['codigoUsuarioMod'];
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
@@ -154,9 +156,22 @@
         $obtenerUsuario->execute();
   $obtenerUsuario = $obtenerUsuario->fetch();
 $id=$obtenerUsuario['usuarioCodigo'];
-$consultaObtenerPuesto = $conexion->prepare("SELECT nombrePuestos FROM nombresPuestos WHERE Puestos_codigoPuesto=:id");
- $consultaObtenerPuesto->execute(['id' => $id]);
-$nombrePuesto = $consultaObtenerPuesto->fetch();
+
+$obtenerPuesto= $conexion->prepare('SELECT  codigoPuesto from puesto where codigoUsuario= :CodigoU');
+
+  $obtenerPuesto->bindValue(":CodigoU",  $id);
+$obtenerPuesto->execute();
+  $obtenerPuesto = $obtenerPuesto->fetch();
+$resCodigoPuesto = $obtenerPuesto['codigoPuesto'];
+
+
+$obtenerNombrePuesto= $conexion->prepare('SELECT  nombrePuestos from nombresPuestos where Puestos_codigoPuesto = :CodigoP');
+$obtenerNombrePuesto->bindValue(":CodigoP",  $resCodigoPuesto);
+$obtenerNombrePuesto->execute();
+$obtenerNombrePuesto = $obtenerNombrePuesto->fetch();
+$nombrePuesto=$obtenerNombrePuesto['nombrePuestos'];
+
+
 
 
 
@@ -177,7 +192,7 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
       <tbody>
         <tr>
           <td>Puesto:</td>
-          <td>".$nombrePuesto['nombrePuestos']."</td>
+          <td>".$nombrePuesto."</td>
         </tr>
         <tr>
           <td>Fecha de contratacion:</td>
@@ -212,7 +227,7 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
           <span class="pull-right">
 
 <?php
-           echo "<a href='editarUsuario.php?codigo=$codigo'data-original-title='Edit this user' data-toggle='tooltip' type='button' class='btn btn-sm btn-warning'><i class='glyphicon glyphicon-edit'></i></a>";
+           echo "<a href='editarUsuario.php'data-original-title='Edit this user' data-toggle='tooltip' type='button' class='btn btn-sm btn-warning'><i class='glyphicon glyphicon-edit'></i></a>";
  ?>
 
               <a href='tablausuarios.php' data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>

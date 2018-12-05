@@ -60,34 +60,24 @@ catch (\Exception $e) {
   fwrite($myfile,$e);
 
 }
-//OBTENER el codigoPuesto
+//OBTENER el codigoPuesto del nombre puesto que ingreso
 
 $obtenerCodigo=$conexion->prepare('SELECT Puestos_codigoPuesto FROM `nombrespuestos` WHERE nombrePuestos=:NombrePuesto');
-echo $puesto;
 $obtenerCodigo->bindValue(':NombrePuesto',$puesto);
 $obtenerCodigo->execute();
 $resultCodigo = $obtenerCodigo->fetch(PDO::FETCH_ASSOC);
 echo $resultCodigo['Puestos_codigoPuesto']; // codigo puesto
 
+
+
 $sentenciaCodigoUsuario=$conexion->prepare('SELECT  usuarioCodigo from usuario where usuarioLogIn=:logIn');
-echo $usuario;
 $sentenciaCodigoUsuario->bindValue(':logIn',$usuario);
 $sentenciaCodigoUsuario->execute();
 $resultCodigoUsuario = $sentenciaCodigoUsuario->fetch(PDO::FETCH_ASSOC);
-echo $resultCodigoUsuario['usuarioCodigo']; // codigo  Tripulante
 
 $puesto_codigo=$resultCodigo['Puestos_codigoPuesto'];
 $codigoUsuario=$resultCodigoUsuario['usuarioCodigo'];
 
-echo "/n";
-
-$sentenciaCodigoUsuario=$conexion->prepare('SELECT  codigoPuesto from puesto where codigoUsuario=:cod');
-$sentenciaCodigoUsuario->bindValue(':cod',"1");
-$sentenciaCodigoUsuario->execute();
-$resultCodigoUsuario = $sentenciaCodigoUsuario->fetch(PDO::FETCH_ASSOC);
-echo $resultCodigoUsuario['codigoPuesto']; // codigo  Tripulante
-
-echo "/n";
 
 try {
 
@@ -98,6 +88,7 @@ $ins->bindValue(':usuario', $codigoUsuario);
 $ins->execute();
 
 }
+
 catch (\Exception $e) {
   fwrite($myfile,$e);
 

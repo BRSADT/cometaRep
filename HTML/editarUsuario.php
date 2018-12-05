@@ -40,13 +40,13 @@
          header("refresh:0;url=../HTML/paginaIndex.php?");
     }
     else{
-      if(!isset($_GET['codigo']))
+      if(!isset($_SESSION['codigoUsuarioMod']))
 
 {
-
+ header("refresh:0;url=../HTML/tablausuarios.php?");
 }
         else{
-        $codigo=$_GET['codigo'];
+        $codigo=$_SESSION['codigoUsuarioMod'];
     ?>
 
         <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
@@ -152,9 +152,20 @@
         $obtenerUsuario->execute();
   $obtenerUsuario = $obtenerUsuario->fetch();
 $id=$obtenerUsuario['usuarioCodigo'];
-$consultaObtenerPuesto = $conexion->prepare("SELECT nombrePuestos FROM nombresPuestos WHERE Puestos_codigoPuesto=:id");
- $consultaObtenerPuesto->execute(['id' => $id]);
-$nombrePuesto = $consultaObtenerPuesto->fetch();
+$obtenerPuesto= $conexion->prepare('SELECT  codigoPuesto from puesto where codigoUsuario= :CodigoU');
+
+  $obtenerPuesto->bindValue(":CodigoU",  $id);
+$obtenerPuesto->execute();
+  $obtenerPuesto = $obtenerPuesto->fetch();
+$resCodigoPuesto = $obtenerPuesto['codigoPuesto'];
+
+
+$obtenerNombrePuesto= $conexion->prepare('SELECT  nombrePuestos from nombresPuestos where Puestos_codigoPuesto = :CodigoP');
+$obtenerNombrePuesto->bindValue(":CodigoP",  $resCodigoPuesto);
+$obtenerNombrePuesto->execute();
+$obtenerNombrePuesto = $obtenerNombrePuesto->fetch();
+$nombrePuesto=$obtenerNombrePuesto['nombrePuestos'];
+
 
 
 
@@ -183,7 +194,7 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
         <tr>
           <td>Puesto:</td>
           <td>
-          <em  id='puesto' class='editable'>".$nombrePuesto['nombrePuestos']."</em>
+          <em  id='puesto' class='editable'>".$nombrePuesto."</em>
 
           </td>
           </tr>
@@ -206,7 +217,7 @@ $nombrePuesto = $consultaObtenerPuesto->fetch();
           <td>Genero</td>
           <td id='genero' class='editable' >".$obtenerUsuario['usuarioGenero']."</td>
         </tr>
-        
+
 <input type = 'codigo'  name='codigo' style = ' visibility: hidden;' value=".$codigo." />
       </tbody>
     </table>
@@ -279,7 +290,7 @@ $(function () {
         }
         if(label.attr('id')=="puesto"){
           label.after("<?php
-          echo" <select name='puesto' id=InputPuesto style = ' visibility: hidden;' >  <option selected value='Capitan'>Capitan</option> <option value='Ingenieria'>Ingenieria</option> <option value='Comandante'>Comandante</option> <option  value='Investigador'>Investigador</option>  </select> ";?>");
+          echo" <select name='puesto' id=InputPuesto style = ' visibility: hidden;' >  <option value='Capitan'>Capitan</option> <option value='Ingenieria'>Ingenieria</option> <option value='Comandante'>Comandante</option>   </select> ";?>");
 
 
         }

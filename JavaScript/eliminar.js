@@ -4,7 +4,6 @@ $(document).ready(function(){
   var data;
 
     $(".btnEliminar").click(function(){
-      alert("hola");
 
             var seleccion=$('*[id^="checkbox"]');
 contador=0;
@@ -17,12 +16,7 @@ contador=0;
               }
             }
 
-            for (var i = 0; i < valores.length; i++) {
 
-  alert(valores[i]);
-
-
-                }
 var json_arr = JSON.stringify(valores);
 data = new FormData();
 
@@ -32,8 +26,8 @@ data = new FormData();
            type: 'POST',
            url: '../PHP/EliminarUsuario.php',
            data: data,
-         success: function(response) {
-alert("se envio");
+           success: function(data) { 
+               window.location.href = '../HTML/TablaUsuarios.php'
            },
            error: function(response) {
 

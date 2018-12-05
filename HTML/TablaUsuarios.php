@@ -22,9 +22,10 @@
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/capitan.css">
 <link rel="stylesheet" href="../CSS/tablausuarios.css">
-<link rel="stylesheet" href="../CSS/ionicons.min.css">
+<link rel="stylesheet" href="../CSS/ionicons.min.css" >
     <!-- Custom styles for this template <link href="dashboard.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--     <link rel="stylesheet" href="../CSS/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   </head>
 
@@ -191,11 +192,14 @@ if($conexion!=NULL){
 
 
 foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usuarioLogIn,usuarioContrasena,usuarioFoto,usuarioFnacimiento from usuario') as $datos) {
-  $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoNombre=:id");
+
+
+  $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoUsuario=:id");
  $consultaObtenercodPuesto->execute(['id' => $datos['usuarioCodigo']]);
  $codigoPuesto = $consultaObtenercodPuesto->fetch();
 
-
+if($_SESSION['codigo']!=$datos['usuarioCodigo'] )
+{
  $consultaObtenerPuesto = $conexion->prepare("SELECT nombrePuestos FROM nombresPuestos WHERE Puestos_codigoPuesto=:id");
   $consultaObtenerPuesto->execute(['id' => $codigoPuesto['codigoPuesto']]);
  $nombrePuesto = $consultaObtenerPuesto->fetch();
@@ -239,6 +243,8 @@ echo"
     </td>
   </tr>
 ";
+
+}
 
 }
 }

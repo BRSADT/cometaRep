@@ -29,7 +29,7 @@ try {
 
 }
 
-header("Refresh:0");
+header("refresh:0; url=../HTML/TablaUsuarios.php");
 }
 
 

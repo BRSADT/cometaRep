@@ -62,7 +62,7 @@ catch (\Exception $e) {
 
 
 
-
+header("refresh:0; url=../HTML/tablausuarios.php");
 
 
  ?>

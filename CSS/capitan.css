@@ -163,10 +163,7 @@ top: 10%;
 
 .contenido-capitan {
   position: relative;
-  left: 2%;
-  top: 40%;
   color: white;
-
 }
 
 /*
@@ -207,12 +204,10 @@ height: 100%;
 
 .contenedor-imagenes {
 
-	margin: 0 auto;
+	margin: 10% auto;
   display: block;
-  width: 20vw !important;
-height: 20vw!important;
-top:25%;
-margin-left:  10%;
+  width: 10vw !important;
+height: 10vw !important;
   position: relative;
 	perspective: 1000;
 }
@@ -311,36 +306,39 @@ margin-left:  10%;
 /*PESTAÑAS*/
 
 #pestaña{
-      left: 102%;
-  position: absolute;
-
-    height: 10%;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
     min-width: 100%;
-    display: inline;
+    margin-top: 30%;
+    display: block;
+}
+.planeta {
+  align-self: center;
+  align-content: center;
+  height: 5vw;
+  width: 5vw;
+  display: block;
 }
 
-.planeta .hydrated{
-  right: 2%;
-position: absolute;
-height: 100%;
-width: 100%;
-display: inline;
-left: auto;
-}
+
 
 #pestaña ul {
   display: none;
+  align-items: center;
 }
 #pestaña ul li {
-  display: inline;
+  display: block;
+  text-align: center;
 }
 #pestaña:hover .contenido-capitan{
- display: inline;
+ display: block;
 
 }
 #pestaña ul li:hover .contenido-capitan{
- display: inline;
-
+ display: block;
+ text-align: center;
 }
 
 @media screen and (max-width: 575px) {
@@ -371,8 +369,7 @@ atras
 height: 27vw!important;
   }
   #info{
-
-    margin-top: 26.6vw!important;
+    margin-top: 30% !important;
   }
 
   .logo img{
@@ -399,9 +396,13 @@ height: 100%;
 
 }
 #info{display: block;
-  top:15%;
-  margin-top: 20vw;
-position: absolute;
+  margin: 20%;
+  align-content: center;
+}
+#info p{
+  text-align: center;
+  color: whitesmoke;
+  font-size: 12px;
 }
 
 

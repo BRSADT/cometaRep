@@ -45,31 +45,10 @@
     else{
     ?>
 
-        <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+      <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0  fixed-top">
           <div id="fondoAside">
-                      <img src="../Imagenes/fondo" class="stretch" alt="" />
-                  </div>
-          <div id="pestaña">
-            <ion-icon name="planet" class="planeta" style="
-
-              position: absolute;
-              height: 100%;
-              width: 20%;
-              display: inline;
-                  left: -20%;
-            "></ion-icon>
-
-        <ul class="contenido-capitan">
-          <li onclick="registroUsuario()">Registrar usuario</li>
-          <li onclick="registroNave()">Registrar nave</li>
-          <li onclick="InfoUsuarios()">Info usuarios</li>
-          <li onclick="InfoNaves()">Info naves</li>
-        </ul>
-        </div>
-
-          <form method="post" action="../PHP/Salir.php">
-            <input type="submit" value="Salir" class="button"/>
-          </form>
+              <img src="../Imagenes/fondo" class="stretch" alt="" />
+          </div>
 
           <div class="contenedor-imagenes">
             <div class="circulo-alrededor"></div>
@@ -103,21 +82,38 @@
           </div>
 </div>
 
-
-
-
-
 <div id="info">
-<p>
+<p><strong>
 
   <?php
   echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'];
    ?>
+   </strong>
 </p>
+    </div>
+
+
 </div>
+
+<div id="pestaña">
+    <ion-icon name="planet" class="planeta"></ion-icon>
+        <ul class="contenido-capitan">
+          <li><a href="RegistrarUsuario.php">Registrar usuario</a></li>
+          <li><a href="RegistroNave.php">Registrar nave</a></li>
+          <li><a href="TablaUsuarios.php">Info usuarios</a></li>
+          <li><a href="TablaNaves.php">Info naves</a></li>
+        </ul>
+        </div>
+
             <nav class="normal navbarflex-md-column flex-row align-items-start py-2">
 
             </nav>
+
+
+
+                      <form method="post" action="../PHP/Salir.php">
+            <input type="submit" value="Salir" class="button"/>
+          </form>
         </aside>
 
 
@@ -138,14 +134,18 @@
               <div class="contact-image">
                   <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
               </div>
-             <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" onsubmit="return validacionUsuario()" >                            <h3>Registra una nave </h3>
+             <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" >
+                                         <h3>Registra una nave </h3>
                  <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="text" name="nombre" id="NombreUsuario" class="form-control" placeholder="Nombre Nave" value="" />
+                              <input type="text" name="nombreNave" id="NombreNave" class="form-control" placeholder="Nombre Nave" value="" required/>
                           </div>
                           <div class="form-group">
-                              <select id="EstadoUsuario" name="estadousuario" class="form-control" >
+                              <input type="text" name="descripcionNave" id="DescripcionNave" class="form-control" placeholder="Descripcion nave" value="" required/>
+                          </div>
+                          <div class="form-group">
+                              <select id="EstadoNave" name="estadoNave" class="form-control" required>
                                <option value="habilitado">Habilitado</option>
                                <option value="proceso">Proceso</option>
                                <option value="baja">Baja</option>

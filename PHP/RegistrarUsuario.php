@@ -99,9 +99,9 @@ catch (\Exception $e) {
 else {
   fwrite($myfile,"existe este usuario");
 
-  echo"existe ya ese usuario";
+  echo '<script type="text/javascript">alert("El usuario ya existe");</script>';
 }
 
-header("refresh:0; url=../HTML/capitan.php");
+header("refresh:0; url=../HTML/RegistrarUsuario.php");
 }
  ?>

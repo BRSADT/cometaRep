@@ -94,19 +94,6 @@
 
 </div>
 
-<div id="pestaña">
-    <ion-icon name="planet" class="planeta"></ion-icon>
-        <ul class="contenido-capitan">
-
-        </ul>
-        </div>
-
-            <nav class="normal navbarflex-md-column flex-row align-items-start py-2">
-
-            </nav>
-
-
-
                       <form method="post" action="../PHP/Salir.php">
             <input type="submit" value="Salir" class="button"/>
           </form>

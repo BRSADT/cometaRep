@@ -41,7 +41,7 @@ $puesto_codigo=$resultCodigo['Puestos_codigoPuesto'];
 
 try {
 
-$ins = $conexion->prepare('INSERT INTO puesto (codigoPuesto, codigoUsuario)  VALUES (:puesto, :usuario)');
+$ins = $conexion->prepare('UPDATE puesto SET codigoPuesto=:puesto,codigoUsuario=:usuario where codigoUsuario=:usuario');
 
 $ins->bindValue(':puesto', $puesto_codigo);
 $ins->bindValue(':usuario', $codigo);

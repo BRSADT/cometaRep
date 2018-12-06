@@ -14,11 +14,11 @@ if($conexion!=NULL){
 $insertar = $conexion->prepare('INSERT INTO nave (naveAlias, naveDescripcion, naveStatus, EnMision, naveFoto) VALUES (:nombreNave, :descripcionNave, :estadoNave, 0, "defecto")');
 
 try {
-  $insertar->bindValue(':nombreNave', $nombreNave);
+$insertar->bindValue(':nombreNave', $nombreNave);
 $insertar->bindValue(':estadoNave', $estadoNave);
 $insertar->bindValue(':descripcionNave', $descripcionNave);
 $insertar->execute();
-echo 'que pedo';
+
 
 }
 

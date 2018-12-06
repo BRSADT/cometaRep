@@ -20,7 +20,7 @@
  <script src="../JavaScript/CambioDePaginaComandante.js"></script>
   <script src="../JavaScript/validacion.js"></script>
     <script src="../JavaScript/filtrousuarios.js"></script>
-        <script src="../JavaScript/ModificarUsuario.js"></script>
+
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/capitan.css">
 <link rel="stylesheet" href="../CSS/tablausuarios.css">
@@ -98,7 +98,7 @@
     <ion-icon name="planet" class="planeta"></ion-icon>
         <ul class="contenido-capitan">
           <li onclick="registroReportes()">Registrar Reportes</li>
-
+          <li onclick="verReportes()">Ver Reportes</li>
         </ul>
         </div>
 

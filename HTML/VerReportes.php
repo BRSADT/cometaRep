@@ -17,10 +17,10 @@
   <script src="../img_area_select/img_area_select/js/jquery.imgareaselect.js"></script>
   <script src="../JavaScript/AbrirModal.js"></script>
 <script src="../JavaScript/Seleccionar.js"></script>
-<script src="../JavaScript/CambioDePaginaComandante.js"></script>
+  <script src="../JavaScript/CambioDePaginaComandante.js"></script>
   <script src="../JavaScript/validacion.js"></script>
     <script src="../JavaScript/filtrousuarios.js"></script>
-    
+
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="../CSS/capitan.css">
 <link rel="stylesheet" href="../CSS/tablausuarios.css">
@@ -100,6 +100,7 @@
         <ul class="contenido-capitan">
           <li onclick="registroReportes()">Registrar Reportes</li>
           <li onclick="verReportes()">Ver Reportes</li>
+
         </ul>
         </div>
 
@@ -125,9 +126,9 @@
 
 
 
-    <main class="InfoUsuarios" style="display: block;">
+    <main class="InfoReportes" style="display: block;">
       <section class="content">
-    			<h1>Ingenieros</h1>
+    			<h1>Reportes</h1>
     			<div class="col-md-8 col-md-offset-2">
     				<div class="panel panel-default">
     					<div class="panel-body">
@@ -155,21 +156,13 @@
 
 
 
-  foreach($conexion->query('SELECT usuarioNombre,usuarioApellido,usuarioCodigo,usuarioLogIn,usuarioContrasena,usuarioFoto,usuarioFnacimiento from usuario inner join puesto on puesto.codigoUsuario=usuario.usuarioCodigo where puesto.codigoPuesto=2 ') as $datos) {
+  foreach($conexion->query('SELECT * FROM `reportes` inner join usuario on reportes.reportes_usuarioCodigo=usuario.usuarioCodigo inner join nave on nave.naveCodigo=reportes.reportes_codigoNave') as $datos) {
 
 
-    $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoUsuario=:id");
-   $consultaObtenercodPuesto->execute(['id' => $datos['usuarioCodigo']]);
-   $codigoPuesto = $consultaObtenercodPuesto->fetch();
 
-  if($_SESSION['codigo']!=$datos['usuarioCodigo'] )
-  {
-   $consultaObtenerPuesto = $conexion->prepare("SELECT nombrePuestos FROM nombresPuestos WHERE Puestos_codigoPuesto=:id");
-    $consultaObtenerPuesto->execute(['id' => $codigoPuesto['codigoPuesto']]);
-   $nombrePuesto = $consultaObtenerPuesto->fetch();
 
   echo"
-  <tr data-status='".$nombrePuesto['nombrePuestos']."'>
+  <tr data-status='".$datos['naveAlias']."'>
       <td>
         <div class='radio'>
 
@@ -191,13 +184,18 @@
                 <span class='media-meta pull-right'></span>
             <h4 class='title'>
           <em class=ModificarUsuario".$datos['usuarioCodigo'].">   ".$datos['usuarioNombre']."   ".$datos['usuarioApellido']." </em>
-              <span class='pull-left pagado'  >(".$nombrePuesto['nombrePuestos'].")</span>
+              <span class='pull-left pagado'  >(".$datos['naveAlias'].")</span>
             </h4>
             <p class='summary'style='display:inline;'>
+            Codigo Reporte: <h4 class='idReporte' style='display:inline;'>".$datos['reportesCodigo']."</h4>
+            <br>
+
             Codigo Tripulante: <h4 class='idUsuario' style='display:inline;'>".$datos['usuarioCodigo']."</h4>
             <br>
+            Codigo Nave: <h4 class='idNave' style='display:inline;'>".$datos['naveCodigo']."</h4>
+            <br>
 
-            Edad:   ".$datos['usuarioFnacimiento']."
+            Descripcion:   ".$datos['reportesDescripcion']."
             <br>
 
 
@@ -208,7 +206,7 @@
     </tr>
   ";
 
-  }
+
 
   }
   }
@@ -218,13 +216,7 @@
     								</tbody>
 
 
-    <button type="button" class="btnSeleccionar btn btn-success"
-                      style="
-        position: absolute;
-        bottom: 10%;
-        right: 5%">
-        Seleccionar
-      </button>
+  
 
 
     							</table>
@@ -235,156 +227,6 @@
     		</section>
     </main>
 
-
-    <main class="Info-Naves"  style="display: none;"  >
-      <section class="content">
-    			<h1>Naves</h1>
-    			<div id="tabla-naves" class="col-md-8 col-md-offset-2">
-    				<div class="panel panel-default">
-    					<div class="panel-body">
-                <div class="pull-left">
-                <input type="text" id="CodigoIngresado" onkeyup="Filtrar()" placeholder="Ingresa Codigo..">
-
-                <input type="text" id="NombreIngresado" onkeyup="FiltrarNombre()" placeholder="Ingresa Nombre..">
-                </div>
-                <div class="pull-right">
-    							<div class="btn-group">
-                   <button type="button" class="btn btn-success btn-filter" data-target="Mision">Mision</button>
-    								<button type="button" class="btn btn-warning btn-filter" data-target="Habilitada">Habilitada</button>
-    								<button type="button" class="btn btn-danger btn-filter" data-target="Nohabilitada">No habilitada</button>
-                    <button type="button" class="btn btn-danger btn-filter" data-target="NoMision">No Mision</button>
-
-                  	<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
-    							</div>
-    						</div>
-    						<div class="table-container">
-    							<table class="table table-filter">
-    								<tbody id="tabla">
-
-  <?php
-
-  if($conexion!=NULL){
-
-
-
-  foreach($conexion->query('SELECT naveCodigo,naveAlias,naveDescripcion,naveStatus,EnMision,naveFoto from nave') as $datos) {
-  //  $consultaObtenercodPuesto = $conexion->prepare("SELECT codigoPuesto FROM puesto WHERE codigoNombre=:id");
-  // $consultaObtenercodPuesto->execute(['id' => $datos['usuarioCodigo']]);
-  // $codigoPuesto = $consultaObtenercodPuesto->fetch();
-
-
-  // $consultaObtenerPuesto = $conexion->prepare("SELECT nombrePuestos FROM nombresPuestos WHERE Puestos_codigoPuesto=:id");
-  //  $consultaObtenerPuesto->execute(['id' => $codigoPuesto['codigoPuesto']]);
-   //$nombrePuesto = $consultaObtenerPuesto->fetch();
-  $dataMision=$datos["EnMision"];
-  $mision=$datos["EnMision"];
-  if($mision=0){
-    $mision="Actualmente no esta en mision";
-  $dataMision="NoMision";
-  }
-  else {
-    $dataMision="Mision";
-    $mision="Actualmente esta en mision";
-  }
-  echo"
-
-
-  <tr data-status='".$datos['naveStatus'].",'".$dataMision."'>
-      <td>
-
-        <div class='radio'>
-
-  <input type='radio' id='checkbox".$datos['naveCodigo']."'   name='radioNave'   value=".$datos['naveCodigo'].">
-          <label for='radio".$datos['naveCodigo']."'></label>
-        </div>
-
-
-      </td>
-      <td>
-        <a href='javascript:;' class='star'>
-          <i class='glyphicon glyphicon-star'></i>
-        </a>
-      </td>
-      <td>
-        <div class='media'>
-          <a href='#' class='pull-left'>
-          <img src='../imagenes/Naves/".$datos['naveFoto']."' class='media-photo'>
-          </a>
-          <div   id='anchura' style=' max-width: 100%;'>
-            <span class='media-meta pull-right'></span>
-            <h4 class='title'>
-          <em class=ModificarUsuario".$datos['naveCodigo'].">   ".$datos['naveAlias']."</em>
-              <span class='pull-left pagado'  >(".$datos['naveStatus'].")</span>
-
-            </h4>
-            <p class='summary'style='display:inline;'>
-            <strong><em>".$mision."</em></strong>
-            <br>
-            Codigo Nave: <h4 class='idUsuario' style='display:inline;'>".$datos['naveCodigo']."</h4>
-            <br>
-            ".$datos['naveDescripcion']."
-            <br>
-
-
-          </p>
-          </div>
-        </div>
-      </td>
-    </tr>
-  ";
-
-  }
-  }
-
-  ?>
-
-    								</tbody>
-
-                    <button type="button" class="btnSig2 btn btn-success"
-                    style="
-      position: absolute;
-      bottom: 10%;
-      right: 5%">
-    Enviar
-    </button>
-    							</table>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</section>
-    </main>
-
-
-<main class="Reporte"  style="display: none;"  >
-
-
-    <div class="container contact-form">
-                <div class="contact-image">
-                    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
-                </div>
-                <form method="post">
-                    <h3>Descripcion Reporte</h3>
-                   <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                              Ingrese Fecha  <input type="date" name="fechaIn" class="form-control"  value="" />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="button" name="btnEnviar" class="btnContact" value="Enviar" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <textarea name="Descripcion" class="form-control-Descripcion" placeholder="Descripcion Reporte" style="width: 100%; height: 150px;"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-    </div>
-
-  </main>
 
 
 

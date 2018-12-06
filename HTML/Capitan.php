@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-      <title>Dashboard Template for Bootstrap</title>
+      <title>Bienvenido</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -97,10 +97,10 @@
 <div id="pestaña">
     <ion-icon name="planet" class="planeta"></ion-icon>
         <ul class="contenido-capitan">
-          <li onclick="registroUsuario()">Registrar usuario</li>
-          <li onclick="registroNave()">Registrar nave</li>
-          <li onclick="InfoUsuarios()">Info usuarios</li>
-          <li onclick="InfoNaves()">Info naves</li>
+          <li><a href="RegistrarUsuario.php">Registrar usuario</a></li>
+          <li><a href="RegistroNave.php">Registrar nave</a></li>
+          <li><a href="TablaUsuarios.php">Info usuarios</a></li>
+          <li><a href="TablaNaves.php">Info naves</a></li>
         </ul>
         </div>
 

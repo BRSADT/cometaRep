@@ -10,11 +10,10 @@ if(nombreUsuario.value=="" || apellidoUsuario.value=="" || usuario.value=="" ||f
 alert ("debe llenar todos los campos");
   return false;
 }
-var expUsuario= new RegExp("^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$")
-contrasena.match(expUsuario);
-if(contrasena.match(expUsuario)==NULL){
-alert("debe contener  minuscula mayuscula y tener de 8 a 16 caracteres");
+var expUsuario= new RegExp("^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$");
+if(contrasena.match(expUsuario)){
+alert("debe contener  minuscula, mayuscula y tener de 8 a 16 caracteres");
+return false;
 }
-
 return true;
 }

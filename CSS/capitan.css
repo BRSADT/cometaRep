@@ -332,6 +332,7 @@ height: 10vw !important;
   display: block;
   text-align: center;
 }
+
 #pestaña:hover .contenido-capitan{
  display: block;
 

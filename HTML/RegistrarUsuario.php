@@ -44,34 +44,10 @@
     else{
     ?>
 
-        <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0 bg-dark fixed-top ">
+                 <aside class="normal col-12 col-md-3 col-sm-4 col-lg-3  p-0  fixed-top">
           <div id="fondoAside">
-                      <img src="../Imagenes/fondo" class="stretch" alt="" />
-                  </div>
-          <div id="pestaña">
-    <ion-icon name="planet" class="planeta" style="
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    display: inline;
-        left: -20%;
-"></ion-icon>
-
-
-
-
-
-        <ul class="contenido-capitan">
-          <li onclick="registroUsuario()">Registrar usuario</li>
-          <li onclick="registroNave()">Registrar nave</li>
-          <li onclick="InfoUsuarios()">Info usuarios</li>
-          <li onclick="InfoNaves()">Info naves</li>
-        </ul>
-        </div>
-
-          <form method="post" action="../PHP/Salir.php">
-            <input type="submit" value="Salir" class="button"/>
-          </form>
+              <img src="../Imagenes/fondo" class="stretch" alt="" />
+          </div>
 
           <div class="contenedor-imagenes">
             <div class="circulo-alrededor"></div>
@@ -105,21 +81,38 @@
           </div>
 </div>
 
-
-
-
-
 <div id="info">
-<p>
+<p><strong>
 
   <?php
   echo " ".$_SESSION['nombre']." ".$_SESSION['apellido'];
    ?>
+   </strong>
 </p>
+    </div>
+
+
 </div>
+
+<div id="pestaña">
+    <ion-icon name="planet" class="planeta"></ion-icon>
+        <ul class="contenido-capitan">
+          <li><a href="RegistrarUsuario.php">Registrar usuario</a></li>
+          <li><a href="RegistroNave.php">Registrar nave</a></li>
+          <li><a href="TablaUsuarios.php">Info usuarios</a></li>
+          <li><a href="TablaNaves.php">Info naves</a></li>
+        </ul>
+        </div>
+
             <nav class="normal navbarflex-md-column flex-row align-items-start py-2">
 
             </nav>
+
+
+
+                      <form method="post" action="../PHP/Salir.php">
+            <input type="submit" value="Salir" class="button"/>
+          </form>
         </aside>
 
 
@@ -157,30 +150,31 @@
                 <div class="contact-image">
                     <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
                 </div>
-                <form action="../PHP/RegistrarUsuario.php" id="RegUsuario" method="post" onsubmit="return validacionUsuario()" >
+                <form action="../PHP/RegistrarUsuario.php" id="RegUsuario" method="post">
                      <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" name="nombre" id="NombreUsuario" class="form-control" placeholder="Nombre Tripulante" value="" />
+                                <input type="text" name="nombre" id="NombreUsuario" class="form-control" placeholder="Nombre Tripulante" value="" required/>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="apellido" id="ApellidoUsuario" class="form-control" placeholder="Apellido Tripulante" value="" />
+                                <input type="text" name="apellido" id="ApellidoUsuario" class="form-control" placeholder="Apellido Tripulante" value="" required/>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario Tripulante" value="" />
+                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario Tripulante" value="" required/>
                             </div>
                             <div class="form-group">
-                            <h6  style="font-weight: 600;  text-align: center;">  Fecha Nacimiento   </h6>   <input type="date" name="fechanac" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" />
+                            <h6  style="font-weight: 600;  text-align: center;">  Fecha Nacimiento   </h6>   <input type="date" name="fechanac" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" required/>
                             </div>
                             <div class="form-group">
-                          <h6  style="font-weight: 600;  text-align: center;">  Fecha Contratacion </h6>   <input type="date" name="fechacontratacion" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" />
+                          <h6  style="font-weight: 600;  text-align: center;">  Fecha Contratacion </h6>   <input type="date" name="fechacontratacion" id="FechaNac" class="form-control" placeholder="Fecha de Nacimiento" value="" required/>
                             </div>
                               </div>
                             <div class="col-md-6">
 
                             <div class="form-group">
-                                <input type="text" name="contrasena" id="Password" class="form-control" placeholder="Contraseña" value="" />
+                                <input type="password" name="contrasena" id="Password" class="form-control" placeholder="Contraseña" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="La contraseña debe contener al menos una mayuscula, una minuscula, un numero, y minimo 6 caracteres" required/>
+
                             </div>
                             <div class="form-group">
                               <select name='genero' class="form-control" > <option  selected value='Masculino'>Masculino</option> <option  value='Femenino'>Femenino</option> <option  value='Otro'>Otro</option>  </select>

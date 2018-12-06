@@ -30,12 +30,12 @@
                     <!--    <div class="collapse navbar-collapse align-items-start">  -->
                 <div class="contenido">
                   <ul class="MenuOpciones">
-                    <li onclick="LogIn()" onmouseover="Laser()">Log in</li>
-                    <li onclick="About()" onmouseover="Laser()">Sobre nosotros</li>
+                    <li onclick="LogIn()"onmouseover="Laser()">Log in</li>
+                    <li onclick="About()"onmouseover="Laser()">Sobre nosotros</li>
                     <li onclick="Mision()"onmouseover="Laser()" ><a>Misión</a></li>
                     <li onclick="Vision()"onmouseover="Laser()">Visión</li>
                     <li onclick="Contact()"onmouseover="Laser()">Contacto</li>
-                    <li onclick="Contact()"onmouseover="Laser()">Presentación</li>
+                    <li onmouseover="Laser()"><a href="../SQL/cometa-5.sql" download>Clic aquí</a></li>
                   </ul>
                   <ul class="soc" >
                     <li><a href="#" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg></a></li>
@@ -92,6 +92,7 @@
 
 
                 </main>
+
               </div>
             </div>
         <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>

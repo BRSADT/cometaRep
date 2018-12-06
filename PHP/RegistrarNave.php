@@ -1,91 +1,24 @@
 <?php
 include 'Conexion.php';
-$nombreUsuario= $_POST["nombre"];
-$apellidoUsuario= $_POST["apellido"];
-$usuario= $_POST["usuario"];
-$fechaNac= $_POST["fechanac"];
-$fechaCont= $_POST["fechacontratacion"];
-$mysqlnac = date("Y-m-d",strtotime($fechaNac));
-$mysqlcont = date("Y-m-d",strtotime($fechaCont));
-$contrasena= $_POST["contrasena"];
-$genero= $_POST["genero"];
-$puesto= $_POST["puesto"];
-$estadoUsuario=$_POST["estadousuario"];
-$existeusuario=0;//no existe
+$nombreNave= $_POST["nombreNave"];
+$estadoNave = $_POST["estadoNave"];
+$descripcionNave = $_POST["descripcionNave"];
 $con=new conexion();
 $conexion=$con->getConexion();
 
 $myfile = fopen("file.txt", "w");
-fwrite($myfile, $contrasena);
-fwrite($myfile, $nombreUsuario);
-fwrite($myfile, $apellidoUsuario);
-fwrite($myfile, $estadoUsuario);
-fwrite($myfile, $usuario);
-fwrite($myfile,$mysqlnac);
 
 
 if($conexion!=NULL){
 
-
-  foreach($conexion->query('SELECT usuarioLogIn from usuario') as $datos) {
-
-if( $datos['usuarioLogIn'] ==$usuario){
-  $existeusuario=1;//si existe
-fwrite($myfile,"existee");
-}
-
-}
-
-if(  $existeusuario==0){
-
-$insertar = $conexion->prepare('INSERT INTO  usuario (usuarioContrasena, usuarioNombre,usuarioApellido,usuarioHabilitado,usuarioLogin,usuarioFoto,usuarioGenero,contratacion,usuarioFnacimiento)  VALUES (:usuarioContrasena, :usuarioNombre,:usuarioApellido,:usuarioHabilitado,:usuarioLogin,:defecto,:usuarioGenero,:contratacion,:nacimiento)');
+$insertar = $conexion->prepare('INSERT INTO nave (naveAlias, naveDescripcion, naveStatus, EnMision, naveFoto) VALUES (:nombreNave, :descripcionNave, :estadoNave, 0, "defecto")');
 
 try {
-  $insertar->bindValue(':usuarioContrasena', $contrasena);
-$insertar->bindValue(':usuarioNombre', $nombreUsuario);
-$insertar->bindValue(':usuarioApellido', $apellidoUsuario);
-$insertar->bindValue(':usuarioHabilitado', $estadoUsuario);
-    $insertar->bindValue(':usuarioLogin', $usuario);
-      $insertar->bindValue(':usuarioGenero',$genero );
-    $insertar->bindValue(':contratacion',$mysqlcont );
-      $insertar->bindValue(':nacimiento',$mysqlnac);
-
-        $defecto="defecto";
-  $insertar->bindValue(':defecto', $defecto);
+  $insertar->bindValue(':nombreNave', $nombreNave);
+$insertar->bindValue(':estadoNave', $estadoNave);
+$insertar->bindValue(':descripcionNave', $descripcionNave);
 $insertar->execute();
-
-}
-
-catch (\Exception $e) {
-  fwrite($myfile,$e);
-
-}
-//OBTENER el codigoPuesto del nombre puesto que ingreso
-
-$obtenerCodigo=$conexion->prepare('SELECT Puestos_codigoPuesto FROM `nombrespuestos` WHERE nombrePuestos=:NombrePuesto');
-$obtenerCodigo->bindValue(':NombrePuesto',$puesto);
-$obtenerCodigo->execute();
-$resultCodigo = $obtenerCodigo->fetch(PDO::FETCH_ASSOC);
-echo $resultCodigo['Puestos_codigoPuesto']; // codigo puesto
-
-
-
-$sentenciaCodigoUsuario=$conexion->prepare('SELECT  usuarioCodigo from usuario where usuarioLogIn=:logIn');
-$sentenciaCodigoUsuario->bindValue(':logIn',$usuario);
-$sentenciaCodigoUsuario->execute();
-$resultCodigoUsuario = $sentenciaCodigoUsuario->fetch(PDO::FETCH_ASSOC);
-
-$puesto_codigo=$resultCodigo['Puestos_codigoPuesto'];
-$codigoUsuario=$resultCodigoUsuario['usuarioCodigo'];
-
-
-try {
-
-$ins = $conexion->prepare('INSERT INTO puesto (codigoPuesto, codigoUsuario)  VALUES (:puesto, :usuario)');
-
-$ins->bindValue(':puesto', $puesto_codigo);
-$ins->bindValue(':usuario', $codigoUsuario);
-$ins->execute();
+echo 'que pedo';
 
 }
 
@@ -96,12 +29,6 @@ catch (\Exception $e) {
 
 
 }
-else {
-  fwrite($myfile,"existe este usuario");
 
-  echo '<script type="text/javascript">alert("El usuario ya existe");</script>';
-}
-
-header("refresh:0; url=../HTML/RegistrarUsuario.php");
-}
+header("refresh:0; url=../HTML/RegistroNave.php");
  ?>

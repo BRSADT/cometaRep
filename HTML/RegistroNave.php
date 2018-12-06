@@ -134,14 +134,18 @@
               <div class="contact-image">
                   <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
               </div>
-             <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" onsubmit="return validacionUsuario()" >                            <h3>Registra una nave </h3>
+             <form action="../PHP/RegistrarNave.php" id="RegNave" method="post" >
+                                         <h3>Registra una nave </h3>
                  <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input type="text" name="nombre" id="NombreUsuario" class="form-control" placeholder="Nombre Nave" value="" />
+                              <input type="text" name="nombreNave" id="NombreNave" class="form-control" placeholder="Nombre Nave" value="" required/>
                           </div>
                           <div class="form-group">
-                              <select id="EstadoUsuario" name="estadousuario" class="form-control" >
+                              <input type="text" name="descripcionNave" id="DescripcionNave" class="form-control" placeholder="Descripcion nave" value="" required/>
+                          </div>
+                          <div class="form-group">
+                              <select id="EstadoNave" name="estadoNave" class="form-control" required>
                                <option value="habilitado">Habilitado</option>
                                <option value="proceso">Proceso</option>
                                <option value="baja">Baja</option>
